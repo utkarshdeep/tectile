@@ -8,16 +8,27 @@ import {UserService} from './shared/user.service';
 import { ToastrModule } from 'ngx-toastr';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
+import { RouterModule, Routes } from '@angular/router';
+import { HomeComponent } from './home/home.component';
+
+const appRoutes: Routes = [
+
+    {path: '', component: LoginComponent },
+    {path: 'home', component: HomeComponent}
+];
+
 @NgModule({
   declarations: [
     AppComponent,
-    LoginComponent
+    LoginComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
       FormsModule,
       ToastrModule.forRoot(),
-      BrowserAnimationsModule
+      BrowserAnimationsModule,
+      RouterModule.forRoot(appRoutes)
   ],
     providers: [UserService],
   bootstrap: [AppComponent]

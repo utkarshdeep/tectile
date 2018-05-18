@@ -3,16 +3,18 @@ import {User} from '../shared/user.model';
 import {NgForm} from '@angular/forms';
 import { UserService } from '../shared/user.service';
 import { ToastrService } from 'ngx-toastr';
+import {Router, ActivatedRoute} from '@angular/router';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
+
 export class LoginComponent implements OnInit {
 
-  user: User = new User();
-  constructor(private userService: UserService, private toastr: ToastrService) { }
+  user: User = new User('c', 'c');
+  constructor(private userService: UserService, private toastr: ToastrService, private router: Router) { }
 
   ngOnInit() {
   }
@@ -28,14 +30,8 @@ export class LoginComponent implements OnInit {
     }
 
     OnSubmit(form: NgForm) {
-      const msg = this.userService.registerUser(form.value);
-      if (msg === 'Success') {
-          this.resetForm(form);
-          this.toastr.success('User registration successful');
-      } else {
-          this.toastr.error('Incorrect credentials');
-          }
-       console.log('hi');
+        console.log(form.value);
+      const msg = this.userService.loginUser(form.value);
     }
 
 }
