@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Injectable, OnInit} from '@angular/core';
 import {User} from '../shared/user.model';
 import {NgForm} from '@angular/forms';
 import { UserService } from '../shared/user.service';
@@ -11,12 +11,14 @@ import {Router, ActivatedRoute} from '@angular/router';
   styleUrls: ['./login.component.css']
 })
 
+@Injectable()
 export class LoginComponent implements OnInit {
 
   user: User = new User('c', 'c');
   constructor(private userService: UserService, private toastr: ToastrService, private router: Router) { }
 
   ngOnInit() {
+      this.resetForm();
   }
 
     resetForm(form?: NgForm) {
@@ -32,6 +34,12 @@ export class LoginComponent implements OnInit {
     OnSubmit(form: NgForm) {
         console.log(form.value);
       const msg = this.userService.loginUser(form.value);
+      if (msg) {
+          this.router.navigate(['/home']);
+      } else {
+          console.log('Incorrect Username or Password');
+          this.toastr.error('Incorrect Username or Password');
+      }
     }
 
 }

@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import {User} from './user.model';
 import {Router} from '@angular/router';
+import {LoginComponent} from '../login/login.component';
 
 
 const users = [
@@ -15,10 +16,11 @@ export class UserService {
   constructor(private router: Router) { }
 
     loginUser(user: User) {
+      console.log('Into User');
       const authenticatedUser = users.find(u => u.Email === user.Email);
+        console.log(authenticatedUser);
         if (authenticatedUser && authenticatedUser.Password === user.Password) {
             localStorage.setItem('user', authenticatedUser.Email);
-            this.router.navigate(['/home']);
             return true;
         }
         return false;

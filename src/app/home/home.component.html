@@ -1,13 +1,3 @@
-<div [ngStyle] = "{'background-image': 'https://i.ytimg.com/vi/5PToTPp1a2k/maxresdefault.jpg'}">
-    <div class="container" >
-        <div class="content">
-            <span>Congratulations, you have successfully logged in!!</span>
-            <br />
-            <a (click)="logout()" href="#">Click Here to logout</a>
-        </div>
-    </div>
-</div>
-
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
     <div class="container">
         <a class="navbar-brand" href="#">Tectile</a>
@@ -29,6 +19,9 @@
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">Contact</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" (click)="logout()" href="#">Logout</a>
                 </li>
             </ul>
         </div>

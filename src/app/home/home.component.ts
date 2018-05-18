@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {UserService} from '../shared/user.service';
+import {LoginComponent} from '../login/login.component';
 
 @Component({
   selector: 'app-home',
@@ -8,14 +9,14 @@ import {UserService} from '../shared/user.service';
 })
 export class HomeComponent implements OnInit {
 
-  constructor(private userService: UserService) { }
+  constructor(private userService: UserService, private loginComponent: LoginComponent) { }
 
   ngOnInit() {
-    console.log('home');
   }
 
   logout() {
     this.userService.logout() ;
+    this.loginComponent.resetForm();
   }
 
 }
