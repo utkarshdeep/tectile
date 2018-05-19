@@ -10,6 +10,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './home/home.component';
+import { SalesBillComponent } from './sales-bill/sales-bill.component';
 
 const appRoutes: Routes = [
 
@@ -21,7 +22,8 @@ const appRoutes: Routes = [
   declarations: [
     AppComponent,
     LoginComponent,
-    HomeComponent
+    HomeComponent,
+    SalesBillComponent
   ],
   imports: [
     BrowserModule,
