@@ -15,7 +15,8 @@ import { SalesBillComponent } from './sales-bill/sales-bill.component';
 const appRoutes: Routes = [
 
     {path: '', component: LoginComponent },
-    {path: 'home', component: HomeComponent}
+    {path: 'home', component: HomeComponent},
+    {path: 'sales_bill', component: SalesBillComponent}
 ];
 
 @NgModule({
