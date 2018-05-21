@@ -10,18 +10,22 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './home/home.component';
+import { InventoryComponent } from './inventory/inventory.component';
+import {ItemService} from "./shared/item.service";
 
 const appRoutes: Routes = [
 
     {path: '', component: LoginComponent },
-    {path: 'home', component: HomeComponent}
+    {path: 'home', component: HomeComponent},
+    {path: 'inventory', component: InventoryComponent}
 ];
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    HomeComponent
+    HomeComponent,
+    InventoryComponent
   ],
   imports: [
     BrowserModule,
@@ -30,7 +34,7 @@ const appRoutes: Routes = [
       BrowserAnimationsModule,
       RouterModule.forRoot(appRoutes)
   ],
-    providers: [UserService, LoginComponent],
+    providers: [UserService, LoginComponent, InventoryComponent, ItemService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
