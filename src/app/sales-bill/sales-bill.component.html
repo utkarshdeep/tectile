@@ -28,15 +28,68 @@
   </div>
 </nav>
 
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalCenterTitle">Modal title</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                ...
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="addOrder" tabindex="-1" role="dialog" aria-labelledby="addTeacherTitle" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <form  (ngSubmit)="addItemToOrder(addOrderForm)" #addOrderForm="ngForm">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="addTeacherTitle">Add new Item</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label >Item FName</label>
+                        <input type="text" name="f_name" #fname="ngModel" class="form-control" [(ngModel)]="order.f_name" placeholder="Enter Name">
+                    </div>
+                    <div class="form-group">
+                        <label for="subject">Item LName</label>
+                        <input type="text" name="l_name" class="form-control" #lname="ngModel" [(ngModel)]="order.l_name"  name="subject" placeholder="Enter Subject">
+                    </div>
+                    <div class="form-group">
+                        <label for="address">Item Mobile</label>
+                        <input type="text" name="mobile" class="form-control" #mobile="ngModel"  [(ngModel)]="order.mobile"  name="address" placeholder="Enter Address">
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
 <div id = "sales-div" class="card text-white bg-danger mb-3">
     <div class="card-header">Sales Bill</div>
     <div class="card-body">
         <div>
-            <form>
+            <form #sales_bill = "ngForm">
                 <div class="form-row">
                     <div class="form-group col-md-3">
-                        <label for="inputEmail4">Company</label>
-                        <select class="form-control" id="exampleFormControlSelect1" placeholder="ABC Saree">
+                        <label >Company</label>
+                        <select class="form-control" placeholder="ABC Saree">
                             <option>RADHEY RADHEY SAREE</option>
                             <option>HARI SAREE</option>
                             <option>OM SAREE</option>
@@ -45,25 +98,25 @@
                         </select>
                     </div>
                     <div class="form-group col-md-2">
-                        <label for="inputPassword4">Type</label>
-                        <input type="password" readonly class="form-control" id="inputPassword4" placeholder="Finish Sales (GST)">
+                        <label >Type</label>
+                        <input type="password" readonly class="form-control"  placeholder="Finish Sales (GST)">
                     </div>
                     <div class="form-group col-md-2">
-                        <label for="inputPassword4">Voucher</label>
+                        <label >Voucher</label>
                         <input type="text"  class="form-control" >
                     </div>
                     <div class="form-group col-md-2">
-                        <label for="inputPassword4">ORD/REF</label>
+                        <label >ORD/REF</label>
                         <input type="text"  class="form-control" >
                     </div>
                     <div class="form-group col-md-2">
-                        <label for="inputPassword4">LR no./AWB</label>
+                        <label >LR no./AWB</label>
                         <input type="text"  class="form-control" >
                     </div>
                 </div>
                 <div class="form-row">
                     <div class="form-group col-md-3">
-                        <label for="inputEmail4">PARTY</label>
+                        <label >PARTY</label>
                         <select class="form-control" placeholder="ABC Saree">
                             <option>MISHRA</option>
                             <option>HARI SAREE</option>
@@ -83,7 +136,7 @@
                 </div>
                 <div class="form-row">
                     <div class="form-group col-md-3">
-                        <label for="inputEmail4">Haste</label>
+                        <label >Haste</label>
                         <select class="form-control" placeholder="ABC Saree">
                             <option>ABC</option>
                             <option>HARI SAREE</option>
@@ -93,7 +146,7 @@
                         </select>
                     </div>
                     <div class="form-group col-md-3">
-                        <label for="inputEmail4">Broker</label>
+                        <label >Broker</label>
                         <select class="form-control" placeholder="ABC Saree">
                             <option>HHHH</option>
                             <option>HARI SAREE</option>
@@ -103,21 +156,21 @@
                         </select>
                     </div>
                     <div class="form-group col-md-2">
-                        <label for="inputPassword4">Haste GSTIN</label>
+                        <label >Haste GSTIN</label>
                         <input type="password" class="form-control">
                     </div>
                     <div class="form-group col-md-2">
-                        <label for="inputPassword4">Dhara</label>
+                        <label >Dhara</label>
                         <input type="text" class="form-control" placeholder="0.00">
                     </div>
                     <div class="form-group col-md-2">
-                        <label for="inputPassword4">Grace</label>
+                        <label >Grace</label>
                         <input type="text" class="form-control" placeholder="0.00">
                     </div>
                 </div>
                 <div class="form-row">
                     <div class="form-group col-md-3">
-                        <label for="inputEmail4">Station</label>
+                        <label >Station</label>
                         <select class="form-control" placeholder="ABC Saree">
                             <option>Surat</option>
                             <option>HARI SAREE</option>
@@ -127,7 +180,7 @@
                         </select>
                     </div>
                     <div class="form-group col-md-3">
-                        <label for="inputEmail4">Transport</label>
+                        <label >Transport</label>
                         <select class="form-control" placeholder="ABC Saree">
                             <option>Logistics</option>
                             <option>HARI SAREE</option>
@@ -137,7 +190,7 @@
                         </select>
                     </div>
                     <div class="form-group col-md-3">
-                        <label for="inputEmail4">Screen Series</label>
+                        <label >Screen Series</label>
                         <select class="form-control" placeholder="ABC Saree">
                             <option>AH99YGF</option>
                             <option>HARI SAREE</option>
@@ -147,137 +200,40 @@
                         </select>
                     </div>
                     <div class="form-group col-md-2">
-                        <label for="inputPassword4">Party GSTIN</label>
+                        <label >Party GSTIN</label>
                         <input type="password" class="form-control">
                     </div>
                 </div>
                 <div class="container">
                     <div class="row clearfix">
                         <div class="col-md-12 column">
-                            <table class="table table-bordered table-hover" id="tab_logic">
-                                <thead>
-                                <tr >
-                                    <th class="text-center">
-                                        #
-                                    </th>
-                                    <th class="text-center">
-                                        Name
-                                    </th>
-                                    <th class="text-center">
-                                        Mail
-                                    </th>
-                                    <th class="text-center">
-                                        Mobile
-                                    </th>
-                                </tr>
+                            <form #tableForm="ngForm">
+                                <button type="button" class="btn btn-primary"  data-toggle="modal" data-target="#addOrder">Add Item</button>
+                            </form>
+                            <div style="margin-top: 10px">
+                            <table class="table">
+                                <thead  class="thead-light">
+                                <th>Serial No</th>
+                                <th>First Name</th>
+                                <th>Last Name</th>
+                                <th>Mobile No.</th>
+                                <th>Actions</th>
                                 </thead>
                                 <tbody>
-                                <tr id='addr0'>
-                                    <td>
-                                        1
-                                    </td>
-                                    <td>
-                                        <input type="text" name='name0'  placeholder='Name' class="form-control"/>
-                                    </td>
-                                    <td>
-                                        <input type="text" name='mail0' placeholder='Mail' class="form-control"/>
-                                    </td>
-                                    <td>
-                                        <input type="text" name='mobile0' placeholder='Mobile' class="form-control"/>
-                                    </td>
+                                <tr *ngFor="let order of (orders)">
+                                    <td>{{order.serial}}</td>
+                                    <td>{{order.f_name}}</td>
+                                    <td>{{order.l_name}}</td>
+                                    <td>{{order.mobile}}</td>
+                                    <td><button type="button" class="btn btn-secondary btn-sm" (click)="deleteOrder(order.serial)">Delete</button></td>
                                 </tr>
-                                <tr id='addr1'></tr>
                                 </tbody>
                             </table>
+                            </div>
                         </div>
                     </div>
-                    <a id="add_row" class="btn btn-default pull-left">Add Row</a><a id='delete_row' class="pull-right btn btn-default">Delete Row</a>
                 </div>
-                <div class="form-row">
-                    <div class="form-group col-md-3">
-                        <label for="inputEmail4">Company</label>
-                        <select class="form-control" id="exampleFormControlSelect1" placeholder="ABC Saree">
-                            <option>RADHEY RADHEY SAREE</option>
-                            <option>HARI SAREE</option>
-                            <option>OM SAREE</option>
-                            <option>RAM SAREE</option>
-                            <option>SITA SAREE</option>
-                        </select>
-                    </div>
-                    <div class="form-group col-md-2">
-                        <label for="inputPassword4">Type</label>
-                        <input type="password" readonly class="form-control" id="inputPassword4" placeholder="Finish Sales (GST)">
-                    </div>
-                    <div class="form-group col-md-2">
-                        <label for="inputPassword4">Voucher</label>
-                        <input type="text"  class="form-control" >
-                    </div>
-                    <div class="form-group col-md-2">
-                        <label for="inputPassword4">ORD/REF</label>
-                        <input type="text"  class="form-control" >
-                    </div>
-                    <div class="form-group col-md-2">
-                        <label for="inputPassword4">LR no./AWB</label>
-                        <input type="text"  class="form-control" >
-                    </div>
-                </div>
-                <div class="form-row">
-                    <div class="form-group col-md-3">
-                        <label for="inputEmail4">Company</label>
-                        <select class="form-control" id="exampleFormControlSelect1" placeholder="ABC Saree">
-                            <option>RADHEY RADHEY SAREE</option>
-                            <option>HARI SAREE</option>
-                            <option>OM SAREE</option>
-                            <option>RAM SAREE</option>
-                            <option>SITA SAREE</option>
-                        </select>
-                    </div>
-                    <div class="form-group col-md-2">
-                        <label for="inputPassword4">Type</label>
-                        <input type="password" readonly class="form-control" id="inputPassword4" placeholder="Finish Sales (GST)">
-                    </div>
-                    <div class="form-group col-md-2">
-                        <label for="inputPassword4">Voucher</label>
-                        <input type="text"  class="form-control" >
-                    </div>
-                    <div class="form-group col-md-2">
-                        <label for="inputPassword4">ORD/REF</label>
-                        <input type="text"  class="form-control" >
-                    </div>
-                    <div class="form-group col-md-2">
-                        <label for="inputPassword4">LR no./AWB</label>
-                        <input type="text"  class="form-control" >
-                    </div>
-                </div>
-                <div class="form-row">
-                    <div class="form-group col-md-3">
-                        <label for="inputEmail4">Company</label>
-                        <select class="form-control" id="exampleFormControlSelect1" placeholder="ABC Saree">
-                            <option>RADHEY RADHEY SAREE</option>
-                            <option>HARI SAREE</option>
-                            <option>OM SAREE</option>
-                            <option>RAM SAREE</option>
-                            <option>SITA SAREE</option>
-                        </select>
-                    </div>
-                    <div class="form-group col-md-2">
-                        <label for="inputPassword4">Type</label>
-                        <input type="password" readonly class="form-control" id="inputPassword4" placeholder="Finish Sales (GST)">
-                    </div>
-                    <div class="form-group col-md-2">
-                        <label for="inputPassword4">Voucher</label>
-                        <input type="text"  class="form-control" >
-                    </div>
-                    <div class="form-group col-md-2">
-                        <label for="inputPassword4">ORD/REF</label>
-                        <input type="text"  class="form-control" >
-                    </div>
-                    <div class="form-group col-md-2">
-                        <label for="inputPassword4">LR no./AWB</label>
-                        <input type="text"  class="form-control" >
-                    </div>
-                </div>
-                <button type="submit" class="btn btn-primary">Sign in</button>
+                <button type="submit" class="btn btn-primary">Submit</button>
             </form>
         </div>
     </div>
