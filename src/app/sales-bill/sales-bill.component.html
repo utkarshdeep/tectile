@@ -85,7 +85,7 @@
     <div class="card-header">Sales Bill</div>
     <div class="card-body">
         <div>
-            <form #sales_bill = "ngForm">
+            <form #sales_bill = "ngForm" (ngSubmit) = "createBill(sales_bill)">
                 <div class="form-row">
                     <div class="form-group col-md-3">
                         <label >Company</label>
@@ -99,11 +99,11 @@
                     </div>
                     <div class="form-group col-md-2">
                         <label >Type</label>
-                        <input type="password" readonly class="form-control"  placeholder="Finish Sales (GST)">
+                        <input type="password" name="type" #type="ngModel" [(ngModel)]="sales_bill.type" readonly class="form-control" placeholder="Finish Sales (GST)"  value="Finish Sales (GST)">
                     </div>
                     <div class="form-group col-md-2">
                         <label >Voucher</label>
-                        <input type="text"  class="form-control" >
+                        <input type="text" name="voucher" #voucher="ngModel" [(ngModel)]="sales_bill.voucher" class="form-control" >
                     </div>
                     <div class="form-group col-md-2">
                         <label >ORD/REF</label>
@@ -211,7 +211,8 @@
                                 <button type="button" class="btn btn-primary"  data-toggle="modal" data-target="#addOrder">Add Item</button>
                             </form>
                             <div style="margin-top: 10px">
-                            <table class="table">
+                            <table class="table table-bordered table-hover table-dark table-sm">
+                                <caption>List of order items</caption>
                                 <thead  class="thead-light">
                                 <th>Serial No</th>
                                 <th>First Name</th>
@@ -228,12 +229,55 @@
                                     <td><button type="button" class="btn btn-secondary btn-sm" (click)="deleteOrder(order.serial)">Delete</button></td>
                                 </tr>
                                 </tbody>
+                                <tfoot>
+                                <tr>
+                                    <th>Footer 1</th>
+                                    <th>Footer 2</th>
+                                    <th>Footer 3</th>
+                                </tr>
+                                </tfoot>
                             </table>
                             </div>
                         </div>
                     </div>
                 </div>
-                <button type="submit" class="btn btn-primary">Submit</button>
+                <div class="form-row">
+                    <div class="form-group col-md-1">
+                        <label >HSN Code</label>
+                        <input type="text" class="form-control">
+                    </div>
+                    <div class="form-group col-md-3">
+                        <label >Counted By:</label>
+                        <select class="form-control" placeholder="ABC Saree">
+                            <option>HHHH</option>
+                            <option>HARI SAREE</option>
+                            <option>OM SAREE</option>
+                            <option>RAM SAREE</option>
+                            <option>SITA SAREE</option>
+                        </select>
+                    </div>
+                    <div class="form-group col-md-3">
+                        <label >Checked By:</label>
+                        <select class="form-control" placeholder="ABC Saree">
+                            <option>HHHH</option>
+                            <option>HARI SAREE</option>
+                            <option>OM SAREE</option>
+                            <option>RAM SAREE</option>
+                            <option>SITA SAREE</option>
+                        </select>
+                    </div>
+                    <div class="form-group col-md-2">
+                        <label >E-Way Bill No.</label>
+                        <input type="text" class="form-control">
+                    </div>
+                    <div class="form-group col-md-2">
+                        <label >Net Payable</label>
+                        <input type="text" class="form-control" placeholder="0.00">
+                    </div>
+                </div>
+                <div class="col-md-11 text-center">
+                    <button type="submit" class="btn btn-success center-block">Submit</button>
+                </div>
             </form>
         </div>
     </div>

@@ -1,13 +1,19 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Injectable, OnInit} from '@angular/core';
 import {OrderModel} from '../shared/order.model';
 import {NgForm} from '@angular/forms';
+import {SalesbillService} from '../shared/salesbill.service';
 
 @Component({
   selector: 'app-sales-bill',
   templateUrl: './sales-bill.component.html',
   styleUrls: ['./sales-bill.component.css']
 })
+
+@Injectable()
 export class SalesBillComponent implements OnInit {
+
+    constructor(private salesBillService: SalesbillService) { }
+
     orders = [
         new OrderModel(1, 'Utkarsh', 'Deep', '979865789'),
         new OrderModel(2, 'Utkarsh', 'Deep', '979865789'),
@@ -21,7 +27,7 @@ export class SalesBillComponent implements OnInit {
     order: OrderModel = new OrderModel(this.orders.length + 1, '', '', '');
 
     addItemToOrder(form: NgForm) {
-        console.log('hi')
+        console.log('hi');
         this.id += 1;
         const order = new OrderModel(this.id, this.order.f_name, this.order.l_name, this.order.mobile);
         this.orders.push(order);
@@ -48,7 +54,11 @@ export class SalesBillComponent implements OnInit {
         }
     }
 
-  constructor() { }
+    createBill(form: NgForm) {
+        console.log('Hi creating bill!!!!');
+        //console.log(form.value);
+        this.salesBillService.createBill(form.value);
+    }
 
   ngOnInit() {
   }

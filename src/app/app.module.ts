@@ -11,6 +11,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { SalesBillComponent } from './sales-bill/sales-bill.component';
+import {SalesbillService} from './shared/salesbill.service';
 
 const appRoutes: Routes = [
 
@@ -33,7 +34,7 @@ const appRoutes: Routes = [
       BrowserAnimationsModule,
       RouterModule.forRoot(appRoutes)
   ],
-    providers: [UserService, LoginComponent],
+    providers: [UserService, LoginComponent, SalesBillComponent, SalesbillService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
