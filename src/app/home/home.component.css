@@ -1,0 +1,68 @@
+div.container1 {
+    position: relative;
+    left: 220px;
+    right: 200px;
+    top: -1150px;
+}
+
+div.text-center {
+    position: relative;
+    left: 20px;
+    top: 10px;
+}
+
+#myrow2{
+    position: relative;
+    right: 0px;
+    top: 50px;
+}
+
+#c1 {
+    position: relative;
+    right: 0px;
+    top: 0px;
+}
+
+#c2 {
+    position: relative;
+    left: 70px;
+    top: 0px;
+}
+
+#c3 {
+    position: relative;
+    left: 140px;
+    top: 0px;
+}
+
+#c4 {
+    position: relative;
+    left: 210px;
+    top: 0px;
+}
+
+#c5 {
+    position: relative;
+    right: 0px;
+    top: 0px;
+}
+
+#c6 {
+    position: relative;
+    left: 70px;
+    top: 0px;
+}
+
+#c7 {
+    position: relative;
+    left: 140px;
+    top: 0px;
+}
+
+#c8 {
+    position: relative;
+    left: 210px;
+    top: 0px;
+}
+
+

@@ -4331,7 +4331,7 @@ input[type="button"].btn-block {
 }
 
 .card {
-  position: relative;
+  position: center;
   display: -ms-flexbox;
   display: flex;
   -ms-flex-direction: column;
