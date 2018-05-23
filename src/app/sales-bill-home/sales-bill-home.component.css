@@ -1,0 +1,14 @@
+#button{
+    position: fixed;
+    top: 10%;
+    right: 75%;
+}
+
+#sales-div{
+    position: fixed;
+    top: 15%;
+    right: 20%;
+    width: 60%;
+    overflow-y: scroll;
+    height:700px;
+}
