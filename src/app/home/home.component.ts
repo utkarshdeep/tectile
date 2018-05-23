@@ -34,7 +34,6 @@ export class HomeComponent implements OnInit {
 
 
   ngOnInit() {
-      this.bgImagePath = this.sanitization.bypassSecurityTrustStyle( 'assets/img/bg.jpeg');
   }
 
   logout() {

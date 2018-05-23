@@ -12,12 +12,14 @@ import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { SalesBillComponent } from './sales-bill/sales-bill.component';
 import {SalesbillService} from './shared/salesbill.service';
+import { InventoryComponent } from './inventory/inventory.component';
+import {ItemService} from './shared/item.service';
 
 const appRoutes: Routes = [
-
     {path: '', component: LoginComponent },
     {path: 'home', component: HomeComponent},
-    {path: 'sales_bill', component: SalesBillComponent}
+    {path: 'sales_bill', component: SalesBillComponent},
+    {path: 'inventory', component: InventoryComponent}
 ];
 
 @NgModule({
@@ -25,7 +27,8 @@ const appRoutes: Routes = [
     AppComponent,
     LoginComponent,
     HomeComponent,
-    SalesBillComponent
+    SalesBillComponent,
+    InventoryComponent
   ],
   imports: [
     BrowserModule,
@@ -34,7 +37,7 @@ const appRoutes: Routes = [
       BrowserAnimationsModule,
       RouterModule.forRoot(appRoutes)
   ],
-    providers: [UserService, LoginComponent, SalesBillComponent, SalesbillService],
+    providers: [UserService, LoginComponent, SalesBillComponent, SalesbillService, ItemService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

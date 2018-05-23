@@ -1,0 +1,47 @@
+bg{
+    position: relative;
+    left: 00px;
+    right: 200px;
+    top: -1170px;
+}
+
+div.container1 {
+    position: relative;
+    left: 220px;
+    right: 200px;
+    top: -1200px;
+}
+
+#c1 {
+    position: relative;
+    right: 0px;
+    top: 0px;
+    left: 00px
+}
+
+#c2 {
+    position: relative;
+    left: 85px;
+    top: 0px;
+}
+
+#c3 {
+    position: relative;
+    left: 170px;
+    top: 0px;
+}
+
+#c4 {
+    position: relative;
+    left: 255px;
+    top: 0px;
+}
+
+table{
+    position: relative;
+    left: 210px;
+    right: 200px;
+    top: -1150px;
+    width: 1400px;
+    background: #f7f7f7;
+}
