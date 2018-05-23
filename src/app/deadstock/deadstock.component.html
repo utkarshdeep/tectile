@@ -1,0 +1,94 @@
+<!-- Top Navigation Bar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+  <div class="container">
+    <a class="navbar-brand" routerLink="/home">Tectile</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarResponsive">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="#">Home
+            <span class="sr-only">(current)</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Services</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Contact</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" (click)="logout()" href="#">Logout</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<img src="assets/css/bootstrap/imgs/bg.jpeg" class="bgColor" width="100%"/>
+<form id="myform">
+    <div class="form-row">
+        <div class="form-group col-md-2">
+            <label ngStyle="color:dark" for="itemName">Item Name</label>
+            <select id="itemName" class="form-control">
+                <option selected>Select</option>
+                <option selected>Kumkum</option>
+                <option selected>Taare Zameen Par</option>
+                <option selected>DilBaug</option>
+                <option selected>Kareena</option>
+            </select>
+        </div>
+        <div class="form-group col-md-2">
+            <label for="itemLoc">Location</label>
+            <select id="itemLoc" class="form-control">
+                <option selected>Select</option>
+                <option>Delhi</option>
+                <option>Kanpur</option>
+                <option>Mumbai</option>
+                <option>Jaipur</option>
+            </select>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="offers">Offer</label>
+        <textarea class="form-control" id="offers" rows="3"></textarea>
+    </div>
+    <div class="form-group">
+        <label for="inputAddress2">Address 2</label>
+        <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
+    </div>
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            <label for="inputCity">City</label>
+            <input type="text" class="form-control" id="inputCity">
+        </div>
+        <div class="form-group col-md-4">
+            <label for="inputState">State</label>
+            <select id="inputState" class="form-control">
+                <option selected>Choose...</option>
+                <option>...</option>
+            </select>
+        </div>
+        <div class="form-group col-md-2">
+            <label for="inputZip">Zip</label>
+            <input type="text" class="form-control" id="inputZip">
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="form-check">
+            <input class="form-check-input" type="checkbox" id="gridCheck">
+            <label class="form-check-label" for="gridCheck">
+                Check me out
+            </label>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="exampleFormControlFile1">Attach Images</label>
+        <input type="file" class="form-control-file" id="exampleFormControlFile1">
+    </div>
+    <button type="submit" class="btn btn-primary">Post</button>
+</form>

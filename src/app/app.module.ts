@@ -14,12 +14,14 @@ import { SalesBillComponent } from './sales-bill/sales-bill.component';
 import {SalesbillService} from './shared/salesbill.service';
 import { InventoryComponent } from './inventory/inventory.component';
 import {ItemService} from './shared/item.service';
+import { DeadstockComponent } from './deadstock/deadstock.component';
 
 const appRoutes: Routes = [
     {path: '', component: LoginComponent },
     {path: 'home', component: HomeComponent},
     {path: 'sales_bill', component: SalesBillComponent},
-    {path: 'inventory', component: InventoryComponent}
+    {path: 'inventory', component: InventoryComponent},
+    {path: 'deadstock', component: DeadstockComponent}
 ];
 
 @NgModule({
@@ -28,7 +30,8 @@ const appRoutes: Routes = [
     LoginComponent,
     HomeComponent,
     SalesBillComponent,
-    InventoryComponent
+    InventoryComponent,
+    DeadstockComponent
   ],
   imports: [
     BrowserModule,
