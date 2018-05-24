@@ -15,6 +15,7 @@ import {SalesbillService} from './shared/salesbill.service';
 import { InventoryComponent } from './inventory/inventory.component';
 import {ItemService} from './shared/item.service';
 import { DeadstockComponent } from './deadstock/deadstock.component';
+import { SalesBillHomeComponent } from './sales-bill-home/sales-bill-home.component';
 
 const appRoutes: Routes = [
     {path: '', component: LoginComponent },
@@ -22,6 +23,7 @@ const appRoutes: Routes = [
     {path: 'sales_bill', component: SalesBillComponent},
     {path: 'inventory', component: InventoryComponent},
     {path: 'deadstock', component: DeadstockComponent}
+    {path: 'sales-home', component: SalesBillHomeComponent}
 ];
 
 @NgModule({
@@ -31,7 +33,8 @@ const appRoutes: Routes = [
     HomeComponent,
     SalesBillComponent,
     InventoryComponent,
-    DeadstockComponent
+    DeadstockComponent,
+    SalesBillHomeComponent
   ],
   imports: [
     BrowserModule,
