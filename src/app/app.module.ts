@@ -16,14 +16,18 @@ import { InventoryComponent } from './inventory/inventory.component';
 import {ItemService} from './shared/item.service';
 import { DeadstockComponent } from './deadstock/deadstock.component';
 import { SalesBillHomeComponent } from './sales-bill-home/sales-bill-home.component';
+import { GreyPurchaseComponent } from './grey-purchase/grey-purchase.component';
+import { MillComponent } from './mill/mill.component';
 
 const appRoutes: Routes = [
     {path: '', component: LoginComponent },
     {path: 'home', component: HomeComponent},
     {path: 'sales_bill', component: SalesBillComponent},
     {path: 'inventory', component: InventoryComponent},
-    {path: 'deadstock', component: DeadstockComponent}
-    {path: 'sales-home', component: SalesBillHomeComponent}
+    {path: 'deadstock', component: DeadstockComponent},
+    {path: 'sales-home', component: SalesBillHomeComponent},
+    {path: 'grey', component: GreyPurchaseComponent},
+    {path: 'mill', component: MillComponent}
 ];
 
 @NgModule({
@@ -34,7 +38,9 @@ const appRoutes: Routes = [
     SalesBillComponent,
     InventoryComponent,
     DeadstockComponent,
-    SalesBillHomeComponent
+    SalesBillHomeComponent,
+    GreyPurchaseComponent,
+    MillComponent
   ],
   imports: [
     BrowserModule,
