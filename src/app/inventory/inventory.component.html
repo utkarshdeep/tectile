@@ -140,7 +140,7 @@
         <td>{{item.ItemName}}</td>
         <td>{{item.ItemDesc}}</td>
         <td>{{item.Amount}}</td>
-        <th>{{item.Stock}}</th>
+        <td>{{item.Stock}}</td>
         <button *ngIf="item.Stock<=20" type="button" (click)="OptionUpdate()" class="btn btn-danger">{{item.Option}}</button>
         <th *ngIf="item.Stock>20">{{item.Option}}</th>
 

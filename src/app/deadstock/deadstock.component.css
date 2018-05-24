@@ -1,7 +1,31 @@
 #myform{
     position: relative;
-    left: 120px;
+    left: 50px;
     right: 200px;
-    top: -1000px;
+    top: -1150px;
 }
 
+#mytable1 {
+    position: absolute;
+    left: 750px;
+    right: 600px;
+    top: 110px;
+    width: 500px;
+}
+
+#mynot{
+    position: absolute;
+    width: 500px;
+    left: 1340px;
+    right: 00px;
+    top: 40px;
+}
+
+#mytable2 {
+    position: absolute;
+    left: 50px;
+    right: 600px;
+    top: 500px;
+    width: 1250px;
+    background: #f7f7f7;
+}
