@@ -60,17 +60,30 @@
         </div>
         <div class="modal-body">
           <div class="form-group">
-            <label >Item FName</label>
-            <input type="text" name="f_name" #fname="ngModel" class="form-control" [(ngModel)]="order.f_name" placeholder="Enter Name">
+            <label >Item Id</label>
+            <input type="text" name="f_name" #fname="ngModel" class="form-control" [(ngModel)]="item.id" placeholder="Enter Name">
           </div>
           <div class="form-group">
-            <label for="subject">Item LName</label>
-            <input type="text" name="l_name" class="form-control" #lname="ngModel" [(ngModel)]="order.l_name"  name="subject" placeholder="Enter Subject">
+            <label for="subject">Item Name</label>
+            <input type="text" name="l_name" class="form-control" #lname="ngModel" [(ngModel)]="item.name"  name="subject" placeholder="Enter Subject">
           </div>
           <div class="form-group">
-            <label for="address">Item Mobile</label>
-            <input type="text" name="mobile" class="form-control" #mobile="ngModel"  [(ngModel)]="order.mobile"  name="address" placeholder="Enter Address">
+            <label for="address">Item Type</label>
+            <input type="text" name="mobile" class="form-control" #mobile="ngModel"  [(ngModel)]="Unfinished"  name="address" placeholder="Enter Address">
           </div>
+            <div class="form-group">
+                <label for="address">Item Desc</label>
+                <input type="text" name="mobile" class="form-control" #mobile="ngModel"  [(ngModel)]="item.desc"  name="address" placeholder="Enter Address">
+            </div>
+            <div class="form-group">
+                <label for="address">Quantity</label>
+                <input type="text" name="mobile" class="form-control" #mobile="ngModel"  [(ngModel)]="item.quantity"  name="address" placeholder="Enter Address">
+            </div>
+            <div class="form-group">
+                <label for="address">Amount</label>
+                <input type="text" name="mobile" class="form-control" #mobile="ngModel"  [(ngModel)]="item.amount"  name="address" placeholder="Enter Address">
+            </div>
+
         </div>
         <div class="modal-footer">
           <button type="submit" class="btn btn-primary">Submit</button>
@@ -82,7 +95,7 @@
 </div>
 
 <div id = "sales-div" class="card text-white bg-danger mb-3">
-  <div class="card-header">Sales Bill</div>
+  <div class="card-header">Grey Purchase Bill</div>
   <div class="card-body">
     <div>
       <form #sales_bill = "ngForm" (ngSubmit) = "createBill(sales_bill)">
@@ -215,18 +228,22 @@
                   <caption>List of order items</caption>
                   <thead  class="thead-light">
                   <th>Serial No</th>
-                  <th>First Name</th>
-                  <th>Last Name</th>
-                  <th>Mobile No.</th>
-                  <th>Actions</th>
+                  <th>Item Name</th>
+                  <th>Item Type</th>
+                  <th>Item Desc.</th>
+                  <th>Amount</th>
+                  <th>Quantity</th>
+                  <th>Action</th>
                   </thead>
                   <tbody>
-                  <tr *ngFor="let order of (orders)">
-                    <td>{{order.serial}}</td>
-                    <td>{{order.f_name}}</td>
-                    <td>{{order.l_name}}</td>
-                    <td>{{order.mobile}}</td>
-                    <td><button type="button" class="btn btn-secondary btn-sm" (click)="deleteOrder(order.serial)">Delete</button></td>
+                  <tr *ngFor="let item of (items)">
+                    <td>{{item.id}}</td>
+                    <td>{{item.name}}</td>
+                    <td>{{item.type}}</td>
+                    <td>{{item.desc}}</td>
+                    <td>{{item.amount}}</td>
+                      <td>{{item.quantity}}</td>
+                    <td><button type="button" class="btn btn-secondary btn-sm" (click)="deleteOrder(item.id)">Delete</button></td>
                   </tr>
                   </tbody>
                   <tfoot>

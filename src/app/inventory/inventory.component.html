@@ -128,7 +128,9 @@
     <tr>
         <th scope="col">#</th>
         <th scope="col">Item Code</th>
+        <th scope="col">Item Name</th>
         <th scope="col">Item Description</th>
+        <th scope="col">Item Type</th>
         <th scope="col">Amount</th>
         <th scope="col">No. of Pieces</th>
         <th scope="col">Action</th>
@@ -136,13 +138,15 @@
     </thead>
     <tbody *ngFor="let item of items">
     <tr>
-        <th scope="row">1</th>
-        <td>{{item.ItemName}}</td>
-        <td>{{item.ItemDesc}}</td>
-        <td>{{item.Amount}}</td>
-        <td>{{item.Stock}}</td>
-        <button *ngIf="item.Stock<=20" type="button" (click)="OptionUpdate()" class="btn btn-danger">{{item.Option}}</button>
-        <th *ngIf="item.Stock>20">{{item.Option}}</th>
+        <td scope="row" class="counterCell"></td>
+        <td>{{item.id}}</td>
+        <td>{{item.name}}</td>
+        <td>{{item.type}}</td>
+        <td>{{item.desc}}</td>
+        <td>{{item.quantity}}</td>
+        <td>{{item.amount}}</td>
+        <button *ngIf="item.quantity<=20" type="button" (click)="OptionUpdate()" class="btn btn-danger">{{item.option}}</button>
+        <th *ngIf="item.quantity>20">{{item.option}}</th>
 
     </tr>
 

@@ -54,4 +54,10 @@ table{
     top: -1120px;
     width: 1400px;
     background: #f7f7f7;
+    counter-reset: tableCount;
+}
+
+.counterCell:before {
+    content: counter(tableCount);
+    counter-increment: tableCount;
 }

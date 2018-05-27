@@ -18,6 +18,7 @@ import { DeadstockComponent } from './deadstock/deadstock.component';
 import { SalesBillHomeComponent } from './sales-bill-home/sales-bill-home.component';
 import { GreyPurchaseComponent } from './grey-purchase/grey-purchase.component';
 import { MillComponent } from './mill/mill.component';
+import {GreyService} from "./shared/grey.service";
 
 const appRoutes: Routes = [
     {path: '', component: LoginComponent },
@@ -49,7 +50,7 @@ const appRoutes: Routes = [
       BrowserAnimationsModule,
       RouterModule.forRoot(appRoutes)
   ],
-    providers: [UserService, LoginComponent, SalesBillComponent, SalesbillService, ItemService],
+    providers: [UserService, LoginComponent, SalesBillComponent, SalesbillService, ItemService,GreyPurchaseComponent,GreyService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

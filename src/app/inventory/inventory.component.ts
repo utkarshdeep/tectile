@@ -1,6 +1,7 @@
 import {Component, Injectable, OnInit} from '@angular/core';
 import {Item} from '../shared/item.model';
 import {ItemService} from '../shared/item.service';
+import {SalesbillService} from "../shared/salesbill.service";
 
 @Component({
   selector: 'app-inventory',
@@ -10,27 +11,13 @@ import {ItemService} from '../shared/item.service';
 
 @Injectable()
 export class InventoryComponent implements OnInit {
+    items: Array<Item>;
 
-    items = [
-        new Item('KumKum', 'Dyed',459, 230 , 'Sufficient'),
-        new Item('Taare Zameen Par', 'Dyed',789, 90 , 'Sufficient' ),
-        new Item('Dhoom', 'Dyed',340, 90 , 'Sufficient' ),
-        new Item('Singham', 'Dyed',230, 199, 'Sufficient'  ),
-        new Item('Veera', 'Dyed',560, 19, 'Sufficient'  ),
-    ];
-  constructor(private itemService:ItemService) {
+  constructor(private itemService:ItemService, private billService:SalesbillService) {
+      this.items = itemService.items
   }
 
   ngOnInit() {
           this.items.forEach(item => this.itemService.optionUpdate(item))
   }
-
-  /*itemUpdate(){
-      this.items.forEach(item => {
-          if(this.billService.ItemName===item.ItemName || this.purchaseService.ItemName=== item.ItemName){
-              item.Stock = item.Stock - this.billService.Stock + this.purchaseService.Stock
-          }
-        })
-  }*/
-
 }

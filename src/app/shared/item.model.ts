@@ -1,16 +1,21 @@
 export class Item {
 
-    ItemName: string;
-    ItemDesc: string;
-    Amount : number;
-    Stock : number;
-    Option : string;
+    id: number;
+    name: string;
+    type: string;
+    desc: string;
+    amount : number;
+    quantity : number;
+    option : string;
 
-    constructor(ItemName: string, ItemDesc: string, Amount : number, Stock : number, Option: string) {
-        this.ItemName = ItemName;
-        this.ItemDesc = ItemDesc;
-        this.Amount = Amount;
-        this.Stock = Stock;
-        this.Option = Option;
-    }
+    constructor(id: number, name: string, type:string, desc:string,amount : number, quantity : number, option: string)
+        {
+            this.id = id;
+            this.name = name;
+            this.type = type;
+            this.desc = desc;
+            this.amount = amount;
+            this.quantity = quantity;
+            this.option = option;
+        }
 }
