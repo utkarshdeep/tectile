@@ -7,6 +7,7 @@ import {FormsModule} from '@angular/forms';
 import {UserService} from './shared/user.service';
 import { ToastrModule } from 'ngx-toastr';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { HttpClientModule } from '@angular/common/http';
 
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './home/home.component';
@@ -48,9 +49,10 @@ const appRoutes: Routes = [
       FormsModule,
       ToastrModule.forRoot(),
       BrowserAnimationsModule,
-      RouterModule.forRoot(appRoutes)
+      RouterModule.forRoot(appRoutes),
+      HttpClientModule
   ],
-    providers: [UserService, LoginComponent, SalesBillComponent, SalesbillService, ItemService,GreyPurchaseComponent,GreyService],
+    providers: [UserService, LoginComponent, SalesBillComponent, SalesbillService, ItemService, GreyPurchaseComponent, GreyService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
