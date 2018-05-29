@@ -2,6 +2,7 @@ import {Component, Injectable, OnInit} from '@angular/core';
 import {Item} from '../shared/item.model';
 import {ItemService} from '../shared/item.service';
 import {SalesbillService} from "../shared/salesbill.service";
+import {PersistenceService} from "angular-persistence";
 
 @Component({
   selector: 'app-inventory',
@@ -14,7 +15,7 @@ export class InventoryComponent implements OnInit {
     items: Array<Item>;
 
   constructor(private itemService:ItemService, private billService:SalesbillService) {
-      this.items = itemService.items
+      this.items = itemService.items;
   }
 
   ngOnInit() {
