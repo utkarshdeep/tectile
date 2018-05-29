@@ -8,14 +8,13 @@ import {SalesbillService} from '../shared/salesbill.service';
 })
 export class SalesBillHomeComponent implements OnInit {
 
+    public salesbills = [];
+
   constructor(private salesBillService: SalesbillService) { }
 
-  getBills() {
-      console.log(this.salesBillService.bills.length);
-      return this.salesBillService.bills;
-  }
-
   ngOnInit() {
+      this.salesBillService.getBills()
+          .subscribe(data => this.salesbills = data);
   }
 
 }
