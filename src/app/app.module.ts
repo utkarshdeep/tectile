@@ -20,6 +20,7 @@ import { SalesBillHomeComponent } from './sales-bill-home/sales-bill-home.compon
 import { GreyPurchaseComponent } from './grey-purchase/grey-purchase.component';
 import { MillComponent } from './mill/mill.component';
 import {GreyService} from "./shared/grey.service";
+import {PersistenceModule} from "angular-persistence";
 
 const appRoutes: Routes = [
     {path: '', component: LoginComponent },
@@ -42,7 +43,7 @@ const appRoutes: Routes = [
     DeadstockComponent,
     SalesBillHomeComponent,
     GreyPurchaseComponent,
-    MillComponent
+    MillComponent,
   ],
   imports: [
     BrowserModule,
