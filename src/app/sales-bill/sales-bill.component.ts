@@ -2,6 +2,7 @@ import {Component, Injectable, OnInit} from '@angular/core';
 import {OrderModel} from '../shared/order.model';
 import {NgForm} from '@angular/forms';
 import {SalesbillService} from '../shared/salesbill.service';
+import {Item} from '../shared/item.model';
 
 @Component({
   selector: 'app-sales-bill',
@@ -11,6 +12,8 @@ import {SalesbillService} from '../shared/salesbill.service';
 
 @Injectable()
 export class SalesBillComponent implements OnInit {
+
+    public finishedItem = [];
 
     constructor(private salesBillService: SalesbillService) { }
 
@@ -22,7 +25,15 @@ export class SalesBillComponent implements OnInit {
         new OrderModel(5, 'Utkarsh', 'Deep', '979865789')
     ];
 
-    id = this.orders.length;
+    items =  [
+        new Item(6878, 'Vanilla', 'Unfinished', 'Plain Cloth', 567,80, 'Sufficient'),
+    ];
+
+    id = 0;
+
+    quanityTotal = this.items.reduce((acc, cur) => acc + cur.quantity, 0);
+
+    totalAmount = this.items.reduce((acc, cur) => acc + cur.quantity * cur.amount , 0);
 
     order: OrderModel = new OrderModel(this.orders.length + 1, '', '', '');
 

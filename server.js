@@ -5,7 +5,8 @@ var express = require('express'),
     mongoose = require('mongoose');
     config = require('./config/db');
     coinRoutes = require('./expressRoutes/coinRoutes');
-    salesBillRoutes = require('./expressRoutes/salesBillRoutes')
+    salesBillRoutes = require('./expressRoutes/salesBillRoutes');
+    itemRoutes = require('./expressRoutes/itemRoutes');
 
 mongoose.Promise = global.Promise;
 mongoose.connect(config.db).then(
@@ -22,6 +23,7 @@ const port = process.env.PORT || 4000;
 
 app.use('/coins', coinRoutes);
 app.use('/salesbill', salesBillRoutes);
+app.use('/item', itemRoutes);
 
 const server = app.listen(port, function(){
     console.log('Listening on port ' + port);

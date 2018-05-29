@@ -211,29 +211,36 @@
                                 <button type="button" class="btn btn-primary"  data-toggle="modal" data-target="#addOrder">Add Item</button>
                             </form>
                             <div style="margin-top: 10px">
-                            <table class="table table-bordered table-hover table-dark table-sm">
+                            <table class="table table-striped table-bordered table-hover table-dark table-sm">
                                 <caption>List of order items</caption>
                                 <thead  class="thead-light">
-                                <th>Serial No</th>
-                                <th>First Name</th>
-                                <th>Last Name</th>
-                                <th>Mobile No.</th>
+                                <th>#</th>
+                                <th>Name</th>
+                                <th>Description</th>
+                                <th>Quantity</th>
+                                <th>Price per piece</th>
+                                <th>Amount</th>
                                 <th>Actions</th>
                                 </thead>
-                                <tbody>
-                                <tr *ngFor="let order of (orders)">
-                                    <td>{{order.serial}}</td>
-                                    <td>{{order.f_name}}</td>
-                                    <td>{{order.l_name}}</td>
-                                    <td>{{order.mobile}}</td>
+                                <tbody ng-init="total = 0">
+                                <tr *ngFor="let item of (items), let i= index">
+                                    <td>{{i+1}}</td>
+                                    <td>{{item.name}}</td>
+                                    <td>{{item.desc}}</td>
+                                    <td>{{item.quantity}}</td>
+                                    <td>{{item.amount}}</td>
+                                    <td ng-init="$parent.total = $parent.total + (item.amount * item.quantity)">{{ item.amount * item.quantity }}</td>
                                     <td><button type="button" class="btn btn-secondary btn-sm" (click)="deleteOrder(order.serial)">Delete</button></td>
                                 </tr>
                                 </tbody>
                                 <tfoot>
                                 <tr>
-                                    <th>Footer 1</th>
-                                    <th>Footer 2</th>
-                                    <th>Footer 3</th>
+                                    <th>Grand total</th>
+                                    <th></th>
+                                    <th></th>
+                                    <th>{{quanityTotal}}</th>
+                                    <th></th>
+                                    <th>{{totalAmount}}</th>
                                 </tr>
                                 </tfoot>
                             </table>

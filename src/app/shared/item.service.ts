@@ -36,7 +36,7 @@ export class ItemService {
 
     updateItem(updatedItem:Item){
      this.items.forEach(item=> {
-         if(item.type==updatedItem.type && item.id==updatedItem.id){
+         if(item.type==updatedItem.type && item._id==updatedItem._id){
              item.quantity = updatedItem.quantity;
          }
      })

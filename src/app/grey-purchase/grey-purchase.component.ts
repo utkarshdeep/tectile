@@ -39,11 +39,11 @@ export class GreyPurchaseComponent implements OnInit {
     deleteOrder(serial: number) {
         console.log('Logging');
         console.log(this.items.length);
-        const items = this.items.filter(order => order.id === serial);
+        const items = this.items.filter(order => order._id === serial);
         console.log(this.items[4]);
         for (let i = 0; i < this.items.length; i++) {
             console.log(i);
-            if (this.items[i].id === serial) {
+            if (this.items[i]._id === serial) {
                 this.items.splice(i, 1);
                 console.log(this.items.length);
             }

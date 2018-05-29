@@ -14,10 +14,10 @@ export class InventoryComponent implements OnInit {
     items: Array<Item>;
 
   constructor(private itemService:ItemService, private billService:SalesbillService) {
-      this.items = itemService.items
+      this.items = itemService.items;
   }
 
   ngOnInit() {
-          this.items.forEach(item => this.itemService.optionUpdate(item))
+          this.items.forEach(item => this.itemService.optionUpdate(item));
   }
 }
