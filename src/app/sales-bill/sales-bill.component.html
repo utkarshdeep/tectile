@@ -61,8 +61,8 @@
                 <div class="modal-body">
                     <div class="form-group">
                         <label for="subject">Item Name</label>
-                        <select name = "name" #name="ngModel" [(ngModel)]="item.name" class="form-control" placeholder="ABC Saree">
-                            <option *ngFor="let item of finishedItems" [value]="item.Value">{{item.name}}</option>
+                        <select name = "_id" #_id="ngModel" [(ngModel)]="item._id" class="form-control" placeholder="ABC Saree">
+                            <option *ngFor="let item of finishedItems" [value]="item._id">{{item.name}}</option>
                         </select>
                         <!--<input type="text" name="l_name" class="form-control" #lname="ngModel" [(ngModel)]="order.l_name"  name="subject" placeholder="Enter Subject">-->
                     </div>
