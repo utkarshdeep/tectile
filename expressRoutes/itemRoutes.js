@@ -15,4 +15,13 @@ itemRoutes.route('/').get(function (req, res) {
     })
 });
 
+
+itemRoutes.route('/type/:type').get(function (req, res) {
+    var type = req.params.type;
+        Item.find({'type': type}, function (err, items){
+        res.json(items);
+    });
+
+});
+
 module.exports = itemRoutes;

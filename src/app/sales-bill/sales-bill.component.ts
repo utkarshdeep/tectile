@@ -3,6 +3,8 @@ import {OrderModel} from '../shared/order.model';
 import {NgForm} from '@angular/forms';
 import {SalesbillService} from '../shared/salesbill.service';
 import {Item} from '../shared/item.model';
+import {ItemService} from '../shared/item.service';
+import {IItem} from '../shared/item';
 
 @Component({
   selector: 'app-sales-bill',
@@ -13,9 +15,11 @@ import {Item} from '../shared/item.model';
 @Injectable()
 export class SalesBillComponent implements OnInit {
 
-    public finishedItem = [];
+    public finishedItems = [];
 
-    constructor(private salesBillService: SalesbillService) { }
+    private item  = new Item(1, '', '', '', 0, 0, '');
+
+    constructor(private salesBillService: SalesbillService, private itemService: ItemService) { }
 
     orders = [
         new OrderModel(1, 'Utkarsh', 'Deep', '979865789'),
@@ -26,7 +30,7 @@ export class SalesBillComponent implements OnInit {
     ];
 
     items =  [
-        new Item(6878, 'Vanilla', 'Unfinished', 'Plain Cloth', 567,80, 'Sufficient'),
+
     ];
 
     id = 0;
@@ -39,7 +43,7 @@ export class SalesBillComponent implements OnInit {
 
     addItemToOrder(form: NgForm) {
         console.log('hi');
-        this.id += 1;
+        console.log(form);
         const order = new OrderModel(this.id, this.order.f_name, this.order.l_name, this.order.mobile);
         this.orders.push(order);
         this.resetOrder();
@@ -72,6 +76,7 @@ export class SalesBillComponent implements OnInit {
     }
 
   ngOnInit() {
+      this.itemService.getItemsByType('Finished').subscribe(data => this.finishedItems = data);
   }
 
 }

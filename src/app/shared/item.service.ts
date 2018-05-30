@@ -1,5 +1,9 @@
 import {Item} from "./item.model";
 import {Injectable, OnInit} from "@angular/core";
+import {HttpClient} from '@angular/common/http';
+import {Observable} from 'rxjs';
+import {IItem} from './item';
+import {ISalesBill} from './salesBill';
 
 
 
@@ -13,8 +17,16 @@ export class ItemService implements OnInit{
 
     itemArray:Array<Item> = new Array<Item>();
 
-    constructor() {
+    constructor(private http: HttpClient) {
 
+    }
+
+
+    getItemsByType(type: string): Observable<Item[]> {
+        const uri = 'http://localhost:4000/item/type/'+ type;
+        const ans = this.http.get<Item[]>(uri);
+        console.log(ans);
+        return ans;
     }
 
     optionUpdate(item:Item) {
