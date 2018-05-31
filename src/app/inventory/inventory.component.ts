@@ -2,8 +2,6 @@ import {Component, Injectable, OnInit} from '@angular/core';
 import {Item} from '../shared/item.model';
 import {ItemService} from '../shared/item.service';
 import {SalesbillService} from "../shared/salesbill.service";
-import {PersistenceService} from "angular-persistence";
-
 @Component({
   selector: 'app-inventory',
   templateUrl: './inventory.component.html',

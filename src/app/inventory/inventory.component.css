@@ -9,7 +9,7 @@ div.container1 {
     position: relative;
     left: 220px;
     right: 200px;
-    top: -1170px;
+    top: -3200px;
 }
 
 #mydiv3{
@@ -51,7 +51,7 @@ table{
     position: relative;
     left: 210px;
     right: 200px;
-    top: -1120px;
+    top: -3150px;
     width: 1400px;
     background: #f7f7f7;
     counter-reset: tableCount;
