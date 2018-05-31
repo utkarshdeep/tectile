@@ -3,12 +3,8 @@ var Schema = mongoose.Schema;
 
 // Define collection and schema for Items
 var Coin = new Schema({
-    name: {
-        type: String
-    },
-    price: {
-        type: Number
-    }
+    name:  String,
+    price:  Number
 },{
     collection: 'coins'
 });

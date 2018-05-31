@@ -60,28 +60,24 @@
         </div>
         <div class="modal-body">
           <div class="form-group">
-            <label >Item Id</label>
-            <input type="text" name="f_name" #fname="ngModel" class="form-control" [(ngModel)]="item.id" placeholder="Enter Name">
-          </div>
-          <div class="form-group">
             <label for="subject">Item Name</label>
-            <input type="text" name="l_name" class="form-control" #lname="ngModel" [(ngModel)]="item.name"  name="subject" placeholder="Enter Subject">
+            <input type="text" name="l_name" class="form-control" #lname="ngModel" [(ngModel)]="item.name"  name="subject" placeholder="Enter name">
           </div>
           <div class="form-group">
             <label for="address">Item Type</label>
-            <input type="text" name="mobile" class="form-control" #mobile="ngModel"  [(ngModel)]="item.type"  name="address" placeholder="Enter Address">
+            <input type="text" name="mobile" class="form-control" #mobile="ngModel"  [(ngModel)]="item.type"  name="address" placeholder="Enter type">
           </div>
             <div class="form-group">
                 <label for="address">Item Desc</label>
-                <input type="text" name="mobile" class="form-control" #mobile="ngModel"  [(ngModel)]="item.desc"  name="address" placeholder="Enter Address">
+                <input type="text" name="mobile" class="form-control" #mobile="ngModel"  [(ngModel)]="item.desc"  name="address" placeholder="Enter desc">
             </div>
             <div class="form-group">
                 <label for="address">Quantity</label>
-                <input type="text" name="mobile" class="form-control" #mobile="ngModel"  [(ngModel)]="item.quantity"  name="address" placeholder="Enter Address">
+                <input type="text" name="mobile" class="form-control" #mobile="ngModel"  [(ngModel)]="item.quantity"  name="address" placeholder="Enter quantity">
             </div>
             <div class="form-group">
                 <label for="address">Amount</label>
-                <input type="text" name="mobile" class="form-control" #mobile="ngModel"  [(ngModel)]="item.amount"  name="address" placeholder="Enter Address">
+                <input type="text" name="mobile" class="form-control" #mobile="ngModel"  [(ngModel)]="item.amount"  name="address" placeholder="Enter amount">
             </div>
 
         </div>
@@ -111,19 +107,19 @@
             </select>
           </div>
           <div class="form-group col-md-2">
-            <label >Type</label>
-            <input type="password" name="type" #type="ngModel" [(ngModel)]="sales_bill.type" readonly class="form-control" placeholder="Finish Sales (GST)"  value="Finish Sales (GST)">
+            <label >SR No.</label>
+            <input type="password" name="type"  readonly class="form-control" >
           </div>
           <div class="form-group col-md-2">
-            <label >Voucher</label>
-            <input type="text" name="voucher" #voucher="ngModel" [(ngModel)]="sales_bill.voucher" class="form-control" >
+            <label >Bill No.</label>
+            <input type="text" name="voucher"  class="form-control" >
           </div>
           <div class="form-group col-md-2">
-            <label >ORD/REF</label>
+            <label >Order No.</label>
             <input type="text"  class="form-control" >
           </div>
           <div class="form-group col-md-2">
-            <label >LR no./AWB</label>
+            <label >Date</label>
             <input type="text"  class="form-control" >
           </div>
         </div>
@@ -139,83 +135,65 @@
             </select>
           </div>
           <div class="form-group col-md-2">
-            <label for="inputPassword4">Bill No.</label>
+            <label for="inputPassword4">Broker</label>
             <input type="password" readonly class="form-control" placeholder="2">
           </div>
           <div class="form-group col-md-2">
-            <label for="inputPassword4">Date</label>
-            <input type="date" class="form-control" placeholder="2">
+            <label for="inputPassword4">Quality</label>
+            <input  class="form-control" placeholder="2">
           </div>
+          <div class="form-group col-md-2">
+            <label for="inputPassword4">HSN Code</label>
+            <input  class="form-control" placeholder="2">
+          </div>
+            <div class="form-group col-md-2">
+                <label >Weight</label>
+                <input type="password" class="form-control">
+            </div>
         </div>
         <div class="form-row">
-          <div class="form-group col-md-3">
-            <label >Haste</label>
-            <select class="form-control" placeholder="ABC Saree">
-              <option>ABC</option>
-              <option>HARI SAREE</option>
-              <option>OM SAREE</option>
-              <option>RAM SAREE</option>
-              <option>SITA SAREE</option>
-            </select>
-          </div>
-          <div class="form-group col-md-3">
-            <label >Broker</label>
-            <select class="form-control" placeholder="ABC Saree">
-              <option>HHHH</option>
-              <option>HARI SAREE</option>
-              <option>OM SAREE</option>
-              <option>RAM SAREE</option>
-              <option>SITA SAREE</option>
-            </select>
-          </div>
-          <div class="form-group col-md-2">
-            <label >Haste GSTIN</label>
-            <input type="password" class="form-control">
-          </div>
-          <div class="form-group col-md-2">
-            <label >Dhara</label>
+            <div class="form-group col-md-3">
+            <label >Checker</label>
             <input type="text" class="form-control" placeholder="0.00">
           </div>
           <div class="form-group col-md-2">
-            <label >Grace</label>
+            <label >REC. Taka</label>
             <input type="text" class="form-control" placeholder="0.00">
           </div>
+            <div class="form-group col-md-2">
+                <label >REC. Mts.</label>
+                <input type="password" class="form-control">
+            </div>
+            <div class="form-group col-md-2">
+                <label >PUR Rate</label>
+                <input type="password" class="form-control">
+            </div>
+            <div class="form-group col-md-2">
+                <label >Remark</label>
+                <input type="password" class="form-control">
+            </div>
         </div>
         <div class="form-row">
           <div class="form-group col-md-3">
-            <label >Station</label>
-            <select class="form-control" placeholder="ABC Saree">
-              <option>Surat</option>
-              <option>HARI SAREE</option>
-              <option>OM SAREE</option>
-              <option>RAM SAREE</option>
-              <option>SITA SAREE</option>
-            </select>
-          </div>
-          <div class="form-group col-md-3">
-            <label >Transport</label>
-            <select class="form-control" placeholder="ABC Saree">
-              <option>Logistics</option>
-              <option>HARI SAREE</option>
-              <option>OM SAREE</option>
-              <option>RAM SAREE</option>
-              <option>SITA SAREE</option>
-            </select>
-          </div>
-          <div class="form-group col-md-3">
-            <label >Screen Series</label>
-            <select class="form-control" placeholder="ABC Saree">
-              <option>AH99YGF</option>
-              <option>HARI SAREE</option>
-              <option>OM SAREE</option>
-              <option>RAM SAREE</option>
-              <option>SITA SAREE</option>
-            </select>
-          </div>
-          <div class="form-group col-md-2">
-            <label >Party GSTIN</label>
+            <label >Gross Amount</label>
             <input type="password" class="form-control">
           </div>
+            <div class="form-group col-md-2">
+                <label >CGST Amount</label>
+                <input type="password" class="form-control">
+            </div>
+            <div class="form-group col-md-2">
+                <label >SGST Amount</label>
+                <input type="password" class="form-control">
+            </div>
+            <div class="form-group col-md-2">
+                <label >Discount/Extra-Charge</label>
+                <input type="password" class="form-control">
+            </div>
+            <div class="form-group col-md-2">
+                <label >Net Amount</label>
+                <input type="password" class="form-control">
+            </div>
         </div>
         <div class="container">
           <div class="row clearfix">
