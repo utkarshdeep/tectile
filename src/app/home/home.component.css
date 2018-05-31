@@ -2,8 +2,11 @@ div.container1 {
     position: relative;
     left: 220px;
     right: 200px;
-    top: -1170px;
+    top: -3200px;
 }
+/*#mycolor{*/
+    /*color: #000000;*/
+/*}*/
 
 div.text-center {
     position: relative;
