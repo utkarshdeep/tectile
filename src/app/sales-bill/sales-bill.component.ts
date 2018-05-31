@@ -15,7 +15,7 @@ import {IItem} from '../shared/item';
 @Injectable()
 export class SalesBillComponent implements OnInit {
 
-    public finishedItems = [];
+    public finishedItems: Array<Item> = [];
 
     private item  = new Item(1, '', '', '', 0, 0, '');
 
@@ -35,17 +35,38 @@ export class SalesBillComponent implements OnInit {
 
     id = 0;
 
-    quanityTotal = this.items.reduce((acc, cur) => acc + cur.quantity, 0);
+    quanityTotal = 0;
 
-    totalAmount = this.items.reduce((acc, cur) => acc + cur.quantity * cur.amount , 0);
+    totalAmount = 0;
 
     order: OrderModel = new OrderModel(this.orders.length + 1, '', '', '');
 
+
+    setNewItem(item: Item) {
+        console.log(item);
+        this.item = item; //this.finishedItems.filter(x => x._id === item).pop();
+
+    }
+
     addItemToOrder(form: NgForm) {
         console.log('hi');
-        console.log(form);
-        const order = new OrderModel(this.id, this.order.f_name, this.order.l_name, this.order.mobile);
-        this.orders.push(order);
+        console.log(form.value);
+        const id = form.value._id;
+        const item = this.finishedItems.filter(x => x._id === id).pop();
+        const newItem = new Item(id, item.name, item.type, item.desc, item.amount, form.value.quantity, item.option);
+        const alreadyItem = this.items.filter(x => x._id === id);
+        if (alreadyItem.length === 0) {
+            this.items.push(newItem);
+        } else {
+            this.items.map(x => {
+                if (x._id === id) {
+                    x.quantity = Number(x.quantity) + Number(newItem.quantity);
+                }
+            });
+        }
+        console.log(this.items);
+        this.quanityTotal = this.items.reduce((acc, cur) => Number(acc) + Number(cur.quantity), Number(0));
+        this.totalAmount = this.items.reduce((acc, cur) => acc + cur.quantity * cur.amount , 0);
         this.resetOrder();
     }
 
@@ -72,7 +93,7 @@ export class SalesBillComponent implements OnInit {
     createBill(form: NgForm) {
         console.log('Hi creating bill!!!!');
         //console.log(form.value);
-        this.salesBillService.createBill(form.value);
+        this.salesBillService.createBill(form.value, this.items);
     }
 
   ngOnInit() {

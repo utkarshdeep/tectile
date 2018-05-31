@@ -1,3 +1,4 @@
+
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
@@ -8,9 +9,14 @@ var SalesBill = new Schema({
     },
     voucher: {
         type: String
+    },
+    items: {
+        type: Array
     }
 },{
     collection: 'salesBill'
 });
+
+var Salesb = mongoose.model('SalesBill', SalesBill);
 
 module.exports = mongoose.model('SalesBill', SalesBill);

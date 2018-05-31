@@ -22,6 +22,9 @@ export class ItemService implements OnInit{
     }
 
 
+
+
+
     getItemsByType(type: string): Observable<Item[]> {
         const uri = 'http://localhost:4000/item/type/'+ type;
         const ans = this.http.get<Item[]>(uri);
