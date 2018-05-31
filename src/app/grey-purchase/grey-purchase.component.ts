@@ -15,7 +15,8 @@ export class GreyPurchaseComponent implements OnInit {
 
   constructor(private greyService:GreyService, private itemService:ItemService) { }
 
-    items = this.itemService.getItem("Unfinished");
+
+    items = Array<Item>();
     length = this.items.length;
 
     item: Item = new Item(null, '','', '', null,null, '');
@@ -39,11 +40,11 @@ export class GreyPurchaseComponent implements OnInit {
     deleteOrder(serial: number) {
         console.log('Logging');
         console.log(this.items.length);
-        const items = this.items.filter(order => order.id === serial);
+        const items = this.items.filter(order => order._id === serial);
         console.log(this.items[4]);
         for (let i = 0; i < this.items.length; i++) {
             console.log(i);
-            if (this.items[i].id === serial) {
+            if (this.items[i]._id === serial) {
                 this.items.splice(i, 1);
                 console.log(this.items.length);
             }
@@ -56,6 +57,8 @@ export class GreyPurchaseComponent implements OnInit {
     }
 
   ngOnInit() {
+
+      this.items = this.itemService.getItem("Unfinished")
   }
 
 }

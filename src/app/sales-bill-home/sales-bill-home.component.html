@@ -26,6 +26,7 @@
                 </li>
             </ul>
         </div>
+
     </div>
 </nav>
 <img src="assets/css/bootstrap/imgs/7.JPG" width="100%" maxlength="1000px"/>
@@ -44,16 +45,16 @@
         </tr>
         </thead>
         <tbody>
-            <tr *ngFor="let bill of getBills(); let i = index">
-                <th>
-                    <div class="btn-group">
-                        <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Open
-                        </button>
-                        <div class="dropdown-menu">
-                            <a class="dropdown-item" href="#">Closed</a>
-                        </div>
+        <tr *ngFor="let bill of salesbills; let i = index">
+            <th>
+                <div class="btn-group">
+                    <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Open
+                    </button>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" href="#">Closed</a>
                     </div>
+                </div>
                 </th>
                 <th scope="row">{{i+1}}</th>
                 <td>{{bill.type}}</td>

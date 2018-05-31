@@ -61,16 +61,15 @@
                 </div>
                 <div class="modal-body">
                     <div class="form-group">
-                        <label >Item FName</label>
-                        <input type="text" name="f_name" #fname="ngModel" class="form-control" [(ngModel)]="order.f_name" placeholder="Enter Name">
+                        <label for="subject">Item Name</label>
+                        <select name = "_id" #_id="ngModel" [(ngModel)]="item._id" class="form-control" placeholder="ABC Saree">
+                            <option *ngFor="let item of finishedItems" [value]="item._id">{{item.name}}</option>
+                        </select>
+                        <!--<input type="text" name="l_name" class="form-control" #lname="ngModel" [(ngModel)]="order.l_name"  name="subject" placeholder="Enter Subject">-->
                     </div>
                     <div class="form-group">
-                        <label for="subject">Item LName</label>
-                        <input type="text" name="l_name" class="form-control" #lname="ngModel" [(ngModel)]="order.l_name"  name="subject" placeholder="Enter Subject">
-                    </div>
-                    <div class="form-group">
-                        <label for="address">Item Mobile</label>
-                        <input type="text" name="mobile" class="form-control" #mobile="ngModel"  [(ngModel)]="order.mobile"  name="address" placeholder="Enter Address">
+                        <label for="address">Quantity</label>
+                        <input type="text" name="quantity" class="form-control" #quantity="ngModel"  [(ngModel)]="item.quantity" placeholder="Quantity">
                     </div>
                 </div>
                 <div class="modal-footer">
@@ -215,26 +214,33 @@
                             <table class="table table-bordered table-hover table-dark table-sm">
                                 <caption>List of order items</caption>
                                 <thead  class="thead-light">
-                                <th>Serial No</th>
-                                <th>First Name</th>
-                                <th>Last Name</th>
-                                <th>Mobile No.</th>
+                                <th>#</th>
+                                <th>Name</th>
+                                <th>Description</th>
+                                <th>Quantity</th>
+                                <th>Price per piece</th>
+                                <th>Amount</th>
                                 <th>Actions</th>
                                 </thead>
-                                <tbody>
-                                <tr *ngFor="let order of (orders)">
-                                    <td>{{order.serial}}</td>
-                                    <td>{{order.f_name}}</td>
-                                    <td>{{order.l_name}}</td>
-                                    <td>{{order.mobile}}</td>
+                                <tbody ng-init="total = 0">
+                                <tr *ngFor="let item of (items), let i= index">
+                                    <td>{{i+1}}</td>
+                                    <td>{{item.name}}</td>
+                                    <td>{{item.desc}}</td>
+                                    <td>{{item.quantity}}</td>
+                                    <td>{{item.amount}}</td>
+                                    <td ng-init="$parent.total = $parent.total + (item.amount * item.quantity)">{{ item.amount * item.quantity }}</td>
                                     <td><button type="button" class="btn btn-secondary btn-sm" (click)="deleteOrder(order.serial)">Delete</button></td>
                                 </tr>
                                 </tbody>
                                 <tfoot>
                                 <tr>
-                                    <th>Footer 1</th>
-                                    <th>Footer 2</th>
-                                    <th>Footer 3</th>
+                                    <th>Grand total</th>
+                                    <th></th>
+                                    <th></th>
+                                    <th>{{quanityTotal}}</th>
+                                    <th></th>
+                                    <th>{{totalAmount}}</th>
                                 </tr>
                                 </tfoot>
                             </table>

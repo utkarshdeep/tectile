@@ -1,18 +1,35 @@
 import {Item} from "./item.model";
-import {Injectable} from "@angular/core";
+import {Injectable, OnInit} from "@angular/core";
+import {HttpClient} from '@angular/common/http';
+import {Observable} from 'rxjs';
+import {IItem} from './item';
+import {ISalesBill} from './salesBill';
 
 
 
 @Injectable()
-export class ItemService {
+export class ItemService implements OnInit{
 
     items =  [
         new Item(6878, 'Vanilla','Unfinished', 'Plain Cloth', 567,80, 'Sufficient'),
     ];
 
+
     itemArray:Array<Item> = new Array<Item>();
 
-    constructor() {
+    constructor(private http: HttpClient) {
+
+    }
+
+
+
+
+
+    getItemsByType(type: string): Observable<Item[]> {
+        const uri = 'http://localhost:4000/item/type/'+ type;
+        const ans = this.http.get<Item[]>(uri);
+        console.log(ans);
+        return ans;
     }
 
     optionUpdate(item:Item) {
@@ -22,11 +39,21 @@ export class ItemService {
     }
 
     addItem(item:Item){
-        this.items.push(item);
+        if(JSON.parse(localStorage.getItem('itemData'))==null) {
+            this.items.push(item);
+            localStorage.setItem('itemData', JSON.stringify(this.items));
+        }
+        else{
+            var array = JSON.parse(localStorage.getItem('itemData'))
+            array.push(item);
+            localStorage.removeItem('itemData');
+            localStorage.setItem('itemData', JSON.stringify(array));
+        }
+
     }
 
     getItem(type:string) {
-        this.items.forEach(item=> {
+       this.items.forEach(item=> {
             if(item.type==type) {
                this.itemArray.push(item);
             }
@@ -36,10 +63,12 @@ export class ItemService {
 
     updateItem(updatedItem:Item){
      this.items.forEach(item=> {
-         if(item.type==updatedItem.type && item.id==updatedItem.id){
+         if(item.type==updatedItem.type && item._id==updatedItem._id){
              item.quantity = updatedItem.quantity;
          }
      })
+    }
+    ngOnInit() {
     }
 }
 
