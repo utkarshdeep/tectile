@@ -1,71 +1,54 @@
-div.container1 {
-    position: relative;
-    left: 220px;
-    right: 200px;
-    top: -3200px;
+#myhomebg{
+    position: fixed;
+    background-size: auto;
 }
-/*#mycolor{*/
-    /*color: #000000;*/
-/*}*/
 
-div.text-center {
-    position: relative;
+div.container1 {
+    position: absolute;
+    left: 220px;
+    right: 220px;
+    top: 75px;
+}
+
+#myrow1 {
+    position: absolute;
     left: 20px;
-    top: 10px;
 }
 
 #myrow2{
-    position: relative;
-    right: 0px;
-    top: 50px;
-}
-
-#c1 {
-    position: relative;
-    right: 0px;
-    top: 0px;
+    position: absolute;
+    left: 20px;
+    top: 500px;
 }
 
 #c2 {
-    position: relative;
-    left: 70px;
-    top: 0px;
+    position: absolute;
+    left: 350px;
 }
 
 #c3 {
-    position: relative;
-    left: 140px;
-    top: 0px;
+    position: absolute;
+    left: 700px;
 }
 
 #c4 {
-    position: relative;
-    left: 210px;
-    top: 0px;
-}
-
-#c5 {
-    position: relative;
-    right: 0px;
-    top: 0px;
+    position: absolute;
+    left: 1050px;
 }
 
 #c6 {
-    position: relative;
-    left: 70px;
-    top: 0px;
+    position: absolute;
+    left: 350px;
 }
 
 #c7 {
-    position: relative;
-    left: 140px;
-    top: 0px;
+    position: absolute;
+    left: 700px;
 }
 
 #c8 {
-    position: relative;
-    left: 210px;
-    top: 0px;
+    position: absolute;
+    left: 1050px;
 }
 
 

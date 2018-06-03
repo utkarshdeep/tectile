@@ -1,15 +1,15 @@
-<img src="assets/img/6.jpeg" style="width: 100%;overflow: hidden;">
+<img src="assets/img/7.jpeg" style="width: 100%; height: auto" id="mybg">
 
 <div>
     <div id="mydiv">
         <div class="card">
-            <div class="card-header">
+            <div class="card-header text-lg-center">
                 Login
             </div>
             <div class="card-body">
                 <form #userRegistrationForm="ngForm" (ngSubmit)="OnSubmit(userRegistrationForm)">
                     <div class="form-group">
-                        <label for="exampleInputEmail1">Email address</label>
+                        <label for="exampleInputEmail1">User Name</label>
                         <input type="text" name="Email" #UserName="ngModel" [(ngModel)]="user.Email" required>
                     </div>
                     <div class="form-group">
