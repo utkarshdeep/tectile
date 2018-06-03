@@ -103,8 +103,6 @@ export class SalesBillComponent implements OnInit {
     }
 
     createBill(form: NgForm) {
-        console.log('Hi creating bill!!!!');
-        //console.log(form.value);
         this.salesBillService.createBill(form.value, this.items);
         this.createUpdatedState(this.items, this.finishedItems);
         console.log("Now calling the updateItem");

@@ -2,11 +2,8 @@ import {Injectable} from '@angular/core';
 import {Router} from '@angular/router';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {Observable} from 'rxjs/Observable';
-import {ISalesBill} from './salesBill';
 import {SalesbillModel} from './salesbill.model';
 import {Item} from './item.model';
-import {SalesBillComponent} from '../sales-bill/sales-bill.component';
-import {SalesBillHomeComponent} from '../sales-bill-home/sales-bill-home.component';
 import {ItemService} from './item.service';
 
 const httpOptions = {
@@ -21,8 +18,6 @@ export class SalesbillService {
 
     createBill(bill: SalesbillModel, items: Array<Item>) {
         bill.type = 'Finish Sales (GST)';
-        console.log(bill.type);
-        console.log('done with it');
         bill.items = items;
         const uri = 'http://localhost:4000/salesbill/add';
         console.log(bill);

@@ -8,7 +8,6 @@ var item = new Schema({
     desc: String,
     amount: Number,
     quantity: Number,
-    //option: String
 
 },{
     collection: 'item'
