@@ -13,3 +13,8 @@
     width: 18rem;
     height: 100px;
 }
+
+#mybg{
+    position: fixed;
+    background-size: auto;
+}
