@@ -17,7 +17,7 @@ export class SalesBillComponent implements OnInit {
 
     public finishedItems: Array<Item> = [];
 
-    private item  = new Item(1, '', '', '', 0, 0, '');
+    private item  = new Item('1', '', '', '', 0, 0, '');
 
     constructor(private salesBillService: SalesbillService, private itemService: ItemService) { }
 
@@ -90,10 +90,26 @@ export class SalesBillComponent implements OnInit {
         }
     }
 
+
+    createUpdatedState(ordered: Array<Item>, original: Array<Item>) {
+        console.log(original);
+       const updated = original.map(x => {
+            const item = ordered.filter(y => y._id === x._id).pop();
+            x.quantity = x.quantity - item.quantity;
+        });
+
+        console.log(original);
+        //console.log('The updated list is: ' + updated.pop());
+    }
+
     createBill(form: NgForm) {
         console.log('Hi creating bill!!!!');
         //console.log(form.value);
         this.salesBillService.createBill(form.value, this.items);
+        this.createUpdatedState(this.items, this.finishedItems);
+        console.log("Now calling the updateItem");
+        this.itemService.updateItems(this.finishedItems);
+
     }
 
   ngOnInit() {

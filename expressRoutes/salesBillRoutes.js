@@ -17,7 +17,6 @@ salesBillRoutes.route('/').get(function (req, res) {
 
 salesBillRoutes.route('/add').post(function (req, res) {
     var bill = new SalesBill(req.body);
-    console.log(bill);
     bill.save()
         .then(item => {
             res.status(200).json({'bill': 'Bill added successfully'});
