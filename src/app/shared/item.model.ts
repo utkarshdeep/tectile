@@ -1,6 +1,6 @@
 export class Item {
 
-    _id: number;
+    _id: string;
     name: string;
     type: string;
     desc: string;
@@ -8,7 +8,7 @@ export class Item {
     quantity : number;
     option : string;
 
-    constructor(_id: number, name: string, type:string, desc:string,amount : number, quantity : number, option: string)
+    constructor(_id: string, name: string, type:string, desc:string,amount : number, quantity : number, option: string)
         {
             this._id = _id;
             this.name = name;

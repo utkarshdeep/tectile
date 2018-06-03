@@ -37,7 +37,7 @@ export class GreyPurchaseComponent implements OnInit {
         this.item.option='';
     }
 
-    deleteOrder(serial: number) {
+    deleteOrder(serial: string) {
         console.log('Logging');
         console.log(this.items.length);
         const items = this.items.filter(order => order._id === serial);

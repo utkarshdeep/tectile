@@ -24,4 +24,26 @@ itemRoutes.route('/type/:type').get(function (req, res) {
 
 });
 
+
+itemRoutes.route('/update/:id').put(function (req, res) {
+    var id = req.params.id;
+    console.log(id);
+    Item.findById(id, function (err, item){
+
+        if (err)
+            res.send(err);
+        item.quantity = req.body.quantity;
+
+        item.save(function(err) {
+            if (err)
+                res.send(err);
+
+            res.json({ message: 'Bear updated!' });
+    });
+
+});
+});
+
+
+
 module.exports = itemRoutes;
