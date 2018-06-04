@@ -3,6 +3,9 @@ import {NgForm} from "@angular/forms";
 import {Item} from "../shared/item.model";
 import {GreyService} from "../shared/grey.service";
 import {ItemService} from "../shared/item.service";
+import {UserService} from "../shared/user.service";
+import {LoginComponent} from "../login/login.component";
+import {Grey} from "../shared/grey.model";
 
 @Component({
   selector: 'app-grey-purchase',
@@ -13,28 +16,29 @@ import {ItemService} from "../shared/item.service";
 @Injectable()
 export class GreyPurchaseComponent implements OnInit {
 
-  constructor(private greyService:GreyService, private itemService:ItemService) { }
+  constructor(private greyService:GreyService, private userService:UserService, private loginComponent:LoginComponent){ }
 
 
-    items = Array<Item>();
+    items = Array<Grey>();
     length = this.items.length;
 
-    item: Item = new Item(null, '','', '', null,null, '');
+    grey: Grey = new Grey(null, '','', null, null,null, '');
 
     addItemToOrder(form: NgForm) {
         this.length += 1;
-        const item = new Item(null, this.item.name,this.item.type, this.item.desc, this.item.amount,this.item.quantity, this.item.option);
-        this.items.push(item);
+        const grey = new Grey(this.grey._id, this.grey.mill,this.grey.taka,this.grey.length,this.grey.rate,this.grey.weight,this.grey.type);
+        //this.greyService.createBill(grey);
+        this.items.push(grey);
         this.resetOrder();
     }
 
     resetOrder() {
-        this.item.name = '';
-        this.item.type = '';
-        this.item.desc = '';
-        this.item.amount = null;
-        this.item.quantity=null;
-        this.item.option='';
+        this.grey.mill = '';
+        this.grey.taka = '';
+        this.grey.length = null;
+        this.grey.rate = null;
+        this.grey.weight=null;
+        this.grey.type='';
     }
 
     deleteOrder(serial: string) {
@@ -51,14 +55,18 @@ export class GreyPurchaseComponent implements OnInit {
         }
     }
 
-    createBill(form: NgForm) {
-        this.greyService.createBill(form.value);
-        this.items.forEach(item => this.itemService.addItem(item ));
-    }
+    // createBill(form: NgForm) {
+    //     this.greyService.createBill(form.value);
+    //     this.items.forEach(item => this.itemService.addItem(item ));
+    // }
 
   ngOnInit() {
-
-      this.items = this.itemService.getItem("Unfinished")
+       this.greyService.getItem().subscribe(data => this.items=data);
+      console.log(this.items);
   }
 
+    logout() {
+        this.userService.logout() ;
+        this.loginComponent.resetForm();
+    }
 }

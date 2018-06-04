@@ -1,7 +1,6 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
   <div class="container">
     <button class="navbar-brand font-weight-bold bg-dark" routerLink="/home">Tectile</button>
-    <!--a class="navbar-brand font-weight-bold" href="/home">Tectile</a-->
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -22,32 +21,12 @@
           <a class="nav-link" href="#">Contact</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link"  href="#">Logout</a>
+          <a class="nav-link"  (click)="logout()" href="#">Logout</a>
         </li>
       </ul>
     </div>
   </div>
 </nav>
-
-<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalCenterTitle">Modal title</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        ...
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
-      </div>
-    </div>
-  </div>
-</div>
 
 <div class="modal fade" id="addOrder" tabindex="-1" role="dialog" aria-labelledby="addTeacherTitle" aria-hidden="true">
   <div class="modal-dialog" role="document">
@@ -61,24 +40,28 @@
         </div>
         <div class="modal-body">
           <div class="form-group">
-            <label for="subject">Item Name</label>
-            <input type="text" name="l_name" class="form-control" #lname="ngModel" [(ngModel)]="item.name"  name="subject" placeholder="Enter name">
+            <label for="mill">Mill</label>
+            <input type="text" name="mill" class="form-control" #mill="ngModel" [(ngModel)]="grey.mill"  name="subject" placeholder="Enter mill name">
           </div>
           <div class="form-group">
-            <label for="address">Item Type</label>
-            <input type="text" name="mobile" class="form-control" #mobile="ngModel"  [(ngModel)]="item.type"  name="address" placeholder="Enter type">
+            <label for="address">Taka</label>
+            <input type="text" name="taka" class="form-control" #taka="ngModel"  [(ngModel)]="grey.taka"  name="address" placeholder="Enter Taka">
           </div>
             <div class="form-group">
-                <label for="address">Item Desc</label>
-                <input type="text" name="mobile" class="form-control" #mobile="ngModel"  [(ngModel)]="item.desc"  name="address" placeholder="Enter desc">
+                <label for="address">Length(In Mts.)</label>
+                <input type="text" name="length" class="form-control" #length="ngModel"  [(ngModel)]="grey.length"  name="address" placeholder="">
             </div>
             <div class="form-group">
-                <label for="address">Quantity</label>
-                <input type="text" name="mobile" class="form-control" #mobile="ngModel"  [(ngModel)]="item.quantity"  name="address" placeholder="Enter quantity">
+                <label for="address">Rate</label>
+                <input type="text" name="rate" class="form-control" #rate="ngModel"  [(ngModel)]="grey.rate"  name="address" placeholder="">
             </div>
             <div class="form-group">
-                <label for="address">Amount</label>
-                <input type="text" name="mobile" class="form-control" #mobile="ngModel"  [(ngModel)]="item.amount"  name="address" placeholder="Enter amount">
+                <label for="address">Weight</label>
+                <input type="text" name="weight" class="form-control" #weight="ngModel"  [(ngModel)]="grey.weight"  name="address" placeholder="">
+            </div>
+            <div class="form-group">
+              <label for="address">Type</label>
+              <input type="text" name="type" class="form-control" #type="ngModel"  [(ngModel)]="grey.type"  name="address" placeholder="">
             </div>
         </div>
         <div class="modal-footer">
@@ -206,31 +189,25 @@
                   <caption>List of order items</caption>
                   <thead  class="thead-light">
                   <th>Serial No</th>
-                  <th>Item Name</th>
-                  <th>Item Type</th>
-                  <th>Item Desc.</th>
-                  <th>Amount</th>
-                  <th>Quantity</th>
-                  <th>Action</th>
+                  <th>Mill</th>
+                  <th>Taka</th>
+                  <th>Length</th>
+                  <th>Rate</th>
+                  <th>Weight</th>
+                  <th>Type</th>
                   </thead>
                   <tbody>
                   <tr *ngFor="let item of (items)">
                     <td>{{item.id}}</td>
-                    <td>{{item.name}}</td>
-                    <td>{{item.type}}</td>
-                    <td>{{item.desc}}</td>
-                    <td>{{item.amount}}</td>
-                      <td>{{item.quantity}}</td>
+                    <td>{{item.mill}}</td>
+                    <td>{{item.taka}}</td>
+                    <td>{{item.length}}</td>
+                    <td>{{item.rate}}</td>
+                      <td>{{item.weight}}</td>
+                      <td>{{item.type}}</td>
                     <td><button type="button" class="btn btn-secondary btn-sm" (click)="deleteOrder(item.id)">Delete</button></td>
                   </tr>
                   </tbody>
-                  <tfoot>
-                  <tr>
-                    <th>Footer 1</th>
-                    <th>Footer 2</th>
-                    <th>Footer 3</th>
-                  </tr>
-                  </tfoot>
                 </table>
               </div>
             </div>
