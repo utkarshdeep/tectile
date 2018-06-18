@@ -16,11 +16,12 @@ export class GreyService {
 
     items: Array<Grey> = new Array<Grey>();
 
-    // // createBill(items: Array<Grey>) {
-    //     item.type = 'Unfinished';
-    //     this.items.push(item);
-    //     this.router.navigate(['/inventory']);
-    // }
+    createBill( items: Array<Grey>) {
+        const uri = 'http://localhost:4000/grey/add';
+        const ans = this.http.post(uri, items).subscribe(res => console.log('Done'));
+        console.log('Did the http call');
+        this.router.navigate(['/inventory']);
+    }
 
     getItem():Observable<Grey[]>{
         const uri = "http://localhost:4000/grey";

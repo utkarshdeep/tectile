@@ -3,7 +3,7 @@ var greyBillRoutes = express.Router();
 var greyBill = require("../models/grey");
 
 
-greyBillRoutes.route('/').get(function (req, res) {
+greyBillRoutes.route('/').get(function (req,
     greyBill.find(function (err, bills) {
         if(err){
             console.log(err);

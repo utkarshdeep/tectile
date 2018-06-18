@@ -27,8 +27,8 @@ export class GreyPurchaseComponent implements OnInit {
     addItemToOrder(form: NgForm) {
         this.length += 1;
         const grey = new Grey(this.grey._id, this.grey.mill,this.grey.taka,this.grey.length,this.grey.rate,this.grey.weight,this.grey.type);
-        //this.greyService.createBill(grey);
         this.items.push(grey);
+        this.greyService.createBill(this.items);
         this.resetOrder();
     }
 
@@ -41,23 +41,18 @@ export class GreyPurchaseComponent implements OnInit {
         this.grey.type='';
     }
 
-    deleteOrder(serial: string) {
-        console.log('Logging');
-        console.log(this.items.length);
-        const items = this.items.filter(order => order._id === serial);
-        console.log(this.items[4]);
-        for (let i = 0; i < this.items.length; i++) {
-            console.log(i);
-            if (this.items[i]._id === serial) {
-                this.items.splice(i, 1);
-                console.log(this.items.length);
-            }
-        }
-    }
-
-    // createBill(form: NgForm) {
-    //     this.greyService.createBill(form.value);
-    //     this.items.forEach(item => this.itemService.addItem(item ));
+    // deleteOrder(serial: string) {
+    //     console.log('Logging');
+    //     console.log(this.items.length);
+    //     const items = this.items.filter(order => order._id === serial);
+    //     console.log(this.items[4]);
+    //     for (let i = 0; i < this.items.length; i++) {
+    //         console.log(i);
+    //         if (this.items[i]._id === serial) {
+    //             this.items.splice(i, 1);
+    //             console.log(this.items.length);
+    //         }
+    //     }
     // }
 
   ngOnInit() {
