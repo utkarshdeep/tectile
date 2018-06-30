@@ -1,8 +1,8 @@
 #myform{
-    position: relative;
+    position: absolute;
     left: 50px;
     right: 200px;
-    top: -1150px;
+    top: 110px;
 }
 
 #mytable1 {
@@ -11,6 +11,7 @@
     right: 600px;
     top: 110px;
     width: 500px;
+    color: #f7f7f7;
 }
 
 #mynot{
@@ -25,7 +26,7 @@
     position: absolute;
     left: 50px;
     right: 600px;
-    top: 500px;
+    top: 530px;
     width: 1250px;
     background: #f7f7f7;
 }

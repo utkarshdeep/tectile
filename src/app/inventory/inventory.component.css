@@ -1,15 +1,13 @@
-bg{
-    position: relative;
-    left: 00px;
-    right: 200px;
-    top: -1170px;
+#myinventbg{
+    position: fixed;
+    background-size: auto;
 }
 
 div.container1 {
-    position: relative;
+    position: absolute;
     left: 220px;
-    right: 200px;
-    top: -1170px;
+    right: 220px;
+    top: 75px;
 }
 
 #mydiv3{
@@ -22,37 +20,33 @@ div.container1 {
 
 }
 
-#c1 {
-    position: relative;
-    right: 0px;
-    top: 0px;
-    left: 00px
-}
-
 #c2 {
-    position: relative;
-    left: 85px;
-    top: 0px;
+    position: absolute;
+    left: 350px;
 }
 
 #c3 {
-    position: relative;
-    left: 170px;
-    top: 0px;
+    position: absolute;
+    left: 700px;
 }
 
 #c4 {
-    position: relative;
-    left: 255px;
-    top: 0px;
+    position: absolute;
+    left: 1050px;
 }
 
-table{
-    position: relative;
+#myTab{
+    position: absolute;
     left: 210px;
-    right: 200px;
-    top: -1120px;
-    width: 1400px;
+    top: 600px;
+    background: #f8d7da;
+}
+table{
+    position: absolute;
+    left: 210px;
+    top: 640px;
+    width: 1350px;
+
     background: #f7f7f7;
     counter-reset: tableCount;
 }

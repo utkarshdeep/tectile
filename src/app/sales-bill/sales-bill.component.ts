@@ -2,6 +2,9 @@ import {Component, Injectable, OnInit} from '@angular/core';
 import {OrderModel} from '../shared/order.model';
 import {NgForm} from '@angular/forms';
 import {SalesbillService} from '../shared/salesbill.service';
+import {Item} from '../shared/item.model';
+import {ItemService} from '../shared/item.service';
+import {IItem} from '../shared/item';
 
 @Component({
   selector: 'app-sales-bill',
@@ -12,7 +15,11 @@ import {SalesbillService} from '../shared/salesbill.service';
 @Injectable()
 export class SalesBillComponent implements OnInit {
 
-    constructor(private salesBillService: SalesbillService) { }
+    public finishedItems: Array<Item> = [];
+
+    private item  = new Item('1', '', '', '', 0, 0, '');
+
+    constructor(private salesBillService: SalesbillService, private itemService: ItemService) { }
 
     orders = [
         new OrderModel(1, 'Utkarsh', 'Deep', '979865789'),
@@ -22,15 +29,44 @@ export class SalesBillComponent implements OnInit {
         new OrderModel(5, 'Utkarsh', 'Deep', '979865789')
     ];
 
-    id = this.orders.length;
+    items =  [
+
+    ];
+
+    id = 0;
+
+    quanityTotal = 0;
+
+    totalAmount = 0;
 
     order: OrderModel = new OrderModel(this.orders.length + 1, '', '', '');
 
+
+    setNewItem(item: Item) {
+        console.log(item);
+        this.item = item; //this.finishedItems.filter(x => x._id === item).pop();
+
+    }
+
     addItemToOrder(form: NgForm) {
         console.log('hi');
-        this.id += 1;
-        const order = new OrderModel(this.id, this.order.f_name, this.order.l_name, this.order.mobile);
-        this.orders.push(order);
+        console.log(form.value);
+        const id = form.value._id;
+        const item = this.finishedItems.filter(x => x._id === id).pop();
+        const newItem = new Item(id, item.name, item.type, item.desc, item.amount, form.value.quantity, item.option);
+        const alreadyItem = this.items.filter(x => x._id === id);
+        if (alreadyItem.length === 0) {
+            this.items.push(newItem);
+        } else {
+            this.items.map(x => {
+                if (x._id === id) {
+                    x.quantity = Number(x.quantity) + Number(newItem.quantity);
+                }
+            });
+        }
+        console.log(this.items);
+        this.quanityTotal = this.items.reduce((acc, cur) => Number(acc) + Number(cur.quantity), Number(0));
+        this.totalAmount = this.items.reduce((acc, cur) => acc + cur.quantity * cur.amount , 0);
         this.resetOrder();
     }
 
@@ -54,13 +90,30 @@ export class SalesBillComponent implements OnInit {
         }
     }
 
+
+    createUpdatedState(ordered: Array<Item>, original: Array<Item>) {
+        console.log(original);
+       const updated = original.map(x => {
+            const item = ordered.filter(y => y._id === x._id).pop();
+            x.quantity = x.quantity - item.quantity;
+        });
+
+        console.log(original);
+        //console.log('The updated list is: ' + updated.pop());
+    }
+
     createBill(form: NgForm) {
         console.log('Hi creating bill!!!!');
         //console.log(form.value);
-        this.salesBillService.createBill(form.value);
+        this.salesBillService.createBill(form.value, this.items);
+        this.createUpdatedState(this.items, this.finishedItems);
+        console.log("Now calling the updateItem");
+        this.itemService.updateItems(this.finishedItems);
+
     }
 
   ngOnInit() {
+      this.itemService.getItemsByType('Finished').subscribe(data => this.finishedItems = data);
   }
 
 }
