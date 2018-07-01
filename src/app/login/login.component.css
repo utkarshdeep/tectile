@@ -6,15 +6,23 @@
     height: 100px;
 }
 
-#mydiv2 {
-    position: fixed;
-    top: 30%;
-    right: 50%;
-    width: 18rem;
-    height: 100px;
-}
-
 #mybg{
     position: fixed;
     background-size: auto;
+}
+
+@media only screen
+and (min-device-width : 414px)
+and (max-device-width : 736px) {  
+    body {
+        background-image: url(/assets/img/mobile-device.jpg);
+    }
+    
+    #mydiv {
+        position: fixed;
+        top: 30%;
+        left: 22%;
+        width: 65%;
+        height: 20%;
+    }
 }
