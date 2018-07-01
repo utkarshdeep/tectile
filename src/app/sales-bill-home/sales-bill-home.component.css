@@ -1,3 +1,8 @@
+#mysalesbg{
+    position: fixed;
+    background-size: auto;
+}
+
 #button{
     position: fixed;
     top: 10%;
@@ -10,10 +15,20 @@
     top: 15%;
     right: 20%;
     width: 60%;
-    overflow-y: scroll;
     height:700px;
 }
 
 #mytable1{
     background: #f7f7f7;;
+}
+
+@media only screen
+and (min-device-width : 900px)
+and (max-device-width : 1440px) {
+    #button{
+        position: fixed;
+        top: 10%;
+        right: 75%;
+        left: 600px;
+    }
 }

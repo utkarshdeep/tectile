@@ -81,9 +81,9 @@
     </form>
   </div>
 </div>
-<img src="assets/css/bootstrap/imgs/7.JPG" width="100%" maxlength="1000px"/>
+<img src="assets/css/bootstrap/imgs/7.JPG" width="100%" maxlength="1000px" id="mymillbg"/>
 <div id = "sales-div" class="card text-white bg-dark mb-3">
-  <div class="card-header">Sales Bill</div>
+  <div class="card-header">Bill Entry</div>
   <div class="card-body">
     <div>
       <form #sales_bill = "ngForm" (ngSubmit) = "createBill(sales_bill)">
@@ -213,7 +213,6 @@
               </form>
               <div style="margin-top: 10px" id="mytable45">
                 <table class="table table-bordered table-hover table-dark table-sm">
-                  <caption>List of order items</caption>
                   <thead  class="thead-light">
                   <th>Serial No</th>
                   <th>First Name</th>
@@ -230,18 +229,12 @@
                     <td><button type="button" class="btn btn-secondary btn-sm" (click)="deleteOrder(order.serial)">Delete</button></td>
                   </tr>
                   </tbody>
-                  <tfoot>
-                  <tr>
-                    <th>Footer 1</th>
-                    <th>Footer 2</th>
-                    <th>Footer 3</th>
-                  </tr>
-                  </tfoot>
                 </table>
               </div>
             </div>
           </div>
         </div>
+        <hr style="height:0.1pt; visibility:hidden;" />
         <div class="form-row">
           <div class="form-group col-md-1">
             <label >HSN Code</label>

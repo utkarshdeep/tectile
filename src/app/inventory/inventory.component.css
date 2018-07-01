@@ -35,7 +35,7 @@ div.container1 {
     left: 1050px;
 }
 
-#myTab{
+#myTab1{
     position: absolute;
     left: 210px;
     top: 600px;
@@ -54,4 +54,37 @@ table{
 .counterCell:before {
     content: counter(tableCount);
     counter-increment: tableCount;
+}
+
+@media only screen
+and (min-device-width : 900px)
+and (max-device-width : 1440px) {
+
+    div.container1 {
+        position: absolute;
+        left: 50px;
+        right: 220px;
+        top: 75px;
+    }
+
+    #myTab{
+        position: absolute;
+        left: 50px;
+        top: 600px;
+        background: #f8d7da;
+    }
+    table{
+        position: absolute;
+        left: 50px;
+        top: 640px;
+        width: 1350px;
+    
+        background: #f7f7f7;
+        counter-reset: tableCount;
+    }
+    
+    .counterCell:before {
+        content: counter(tableCount);
+        counter-increment: tableCount;
+    }
 }

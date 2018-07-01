@@ -10,11 +10,11 @@
                 <form #userRegistrationForm="ngForm" (ngSubmit)="OnSubmit(userRegistrationForm)" class="myform">
                     <div class="form-group">
                         <label for="exampleInputEmail1">User Name</label>
-                        <input type="text" name="Email" #UserName="ngModel" [(ngModel)]="user.Email" required>
+                        <input class="myinputs" type="text" name="Email" #UserName="ngModel" [(ngModel)]="user.Email" required>
                     </div>
                     <div class="form-group">
                         <label for="exampleInputPassword1">Password</label>
-                        <input type="password" name="Password" #Password="ngModel" [(ngModel)]="user.Password" required minlength="3">
+                        <input class="myinputs" type="password" name="Password" #Password="ngModel" [(ngModel)]="user.Password" required minlength="3">
                     </div>
                     <button type="submit" class="btn btn-primary">Submit</button>
                 </form>

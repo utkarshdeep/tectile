@@ -1,3 +1,8 @@
+#mydeadbg{
+    position: fixed;
+    background-size: auto;
+}
+
 #myform{
     position: absolute;
     left: 50px;
@@ -29,4 +34,33 @@
     top: 530px;
     width: 1250px;
     background: #f7f7f7;
+}
+
+@media only screen
+and (min-device-width : 900px)
+and (max-device-width : 1440px) {
+
+    #myform{
+        position: absolute;
+        left: 50px;
+        right: 200px;
+        top: 70px;
+    }
+    
+    #mytable1 {
+        position: absolute;
+        left: 550px;
+        right: 300px;
+        top: 70px;
+        width: 500px;
+        color: #f7f7f7;
+    }
+    
+    #mynot{
+        position: absolute;
+        width: 400px;
+        left: 1100px;
+        right: 00px;
+        top: 40px;
+    }
 }

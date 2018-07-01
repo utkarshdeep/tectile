@@ -26,3 +26,23 @@ and (max-device-width : 736px) {
         height: 20%;
     }
 }
+
+@media only screen
+and (min-device-width : 900px)
+and (max-device-width : 1440px) {  
+    body {
+        background-image: url(/assets/img/mobile-device.jpg);
+    }
+    
+    #mydiv {
+        position: fixed;
+        top: 35%;
+        left: 35%;
+        width: 30%;
+        height: 20%;
+    }
+
+    .myinputs{
+        width: 100%
+    }
+}

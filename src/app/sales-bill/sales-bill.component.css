@@ -1,19 +1,35 @@
+#mysales1bg{
+    position: fixed;
+    background-size: auto;
+}
+
 #sales-div{
-    position: relative;
-    top: -3150px;
+    position: absolute;
+    top: 110px;
     left: 100px;
     right: 20%;
     width: 90%;
-    overflow-y: scroll;
 }
 
 #mytable45{
     position: relative;
-    width: 1500px;
-    left: -240px;
+    width: 1150px;
+    left: -40px;
+    top: 38px
 }
 
 #mybutton{
-    position: relative;
+    position: absolute;
     left: 450px;
+}
+
+@media only screen
+and (min-device-width : 900px)
+and (max-device-width : 1440px) {
+    #mytable45{
+        position: relative;
+        width: 1150px;
+        left: -60px;
+        top: 38px
+    }
 }
