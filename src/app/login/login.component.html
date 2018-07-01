@@ -1,4 +1,4 @@
-<img src="assets/img/7.jpeg" style="width: 100%; height: auto" id="mybg">
+<img src="assets/img/7.jpeg" style="width: 100%; height: 100%   " id="mybg">
 
 <div id="mydiv">
     <div>
@@ -7,7 +7,7 @@
                 Login
             </div>
             <div class="card-body">
-                <form #userRegistrationForm="ngForm" (ngSubmit)="OnSubmit(userRegistrationForm)">
+                <form #userRegistrationForm="ngForm" (ngSubmit)="OnSubmit(userRegistrationForm)" class="myform">
                     <div class="form-group">
                         <label for="exampleInputEmail1">User Name</label>
                         <input type="text" name="Email" #UserName="ngModel" [(ngModel)]="user.Email" required>
