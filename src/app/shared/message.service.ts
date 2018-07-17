@@ -1,9 +1,9 @@
 import { Router } from "@angular/router";
 import { Injectable } from "@angular/core";
 
-//var plivo = require('@types/plivo');
+import plivo = require('plivo');
 
-import { plivo } from 'plivo'
+//import { plivo } from 'plivo'
 @Injectable()
 export class MessageService {
 
