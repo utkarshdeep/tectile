@@ -12,7 +12,7 @@ div.container1 {
 
 #myrow1 {
     position: absolute;
-    left: 20px;
+    left: 60px;
 }
 
 #myrow2{
@@ -21,14 +21,19 @@ div.container1 {
     top: 500px;
 }
 
+#c1 {
+    position: absolute;
+    left: 100px;
+}
+
 #c2 {
     position: absolute;
-    left: 350px;
+    left: 500px;
 }
 
 #c3 {
     position: absolute;
-    left: 700px;
+    left: 900px;
 }
 
 #c4 {
@@ -48,7 +53,7 @@ div.container1 {
 
 #c8 {
     position: absolute;
-    left: 1050px;
+    left: 750px;
 }
 
 @media only screen

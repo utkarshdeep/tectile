@@ -10,6 +10,12 @@ div.container1 {
     top: 75px;
 }
 
+.tabs{
+    position: absolute;
+    left: 210px;
+    top: 600px;
+}
+
 #mydiv3{
     width: fit-content;
 }

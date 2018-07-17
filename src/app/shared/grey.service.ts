@@ -14,6 +14,7 @@ export class GreyService {
     createBill(item: Item) {
         item.type = 'Unfinished';
         this.items.push(item);
-        this.router.navigate(['/inventory']);
+        console.log(item);
+        this.router.navigate(['/tracking']);
     }
 }

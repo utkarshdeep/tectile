@@ -64,10 +64,6 @@
             <label for="subject">Item Name</label>
             <input type="text" name="l_name" class="form-control" #lname="ngModel" [(ngModel)]="item.name"  name="subject" placeholder="Enter name">
           </div>
-          <div class="form-group">
-            <label for="address">Item Type</label>
-            <input type="text" name="mobile" class="form-control" #mobile="ngModel"  [(ngModel)]="item.type"  name="address" placeholder="Enter type">
-          </div>
             <div class="form-group">
                 <label for="address">Item Desc</label>
                 <input type="text" name="mobile" class="form-control" #mobile="ngModel"  [(ngModel)]="item.desc"  name="address" placeholder="Enter desc">
@@ -207,7 +203,6 @@
                   <thead  class="thead-light">
                   <th>Serial No</th>
                   <th>Item Name</th>
-                  <th>Item Type</th>
                   <th>Item Desc.</th>
                   <th>Amount</th>
                   <th>Quantity</th>
@@ -217,7 +212,6 @@
                   <tr *ngFor="let item of (items)">
                     <td>{{item.id}}</td>
                     <td>{{item.name}}</td>
-                    <td>{{item.type}}</td>
                     <td>{{item.desc}}</td>
                     <td>{{item.amount}}</td>
                       <td>{{item.quantity}}</td>

@@ -21,6 +21,7 @@ import { GreyPurchaseComponent } from './grey-purchase/grey-purchase.component';
 import { MillComponent } from './mill/mill.component';
 import {GreyService} from "./shared/grey.service";
 import { MessageService } from './shared/message.service';
+import { TrackingComponent } from './tracking/tracking.component';
 
 const appRoutes: Routes = [
     {path: '', component: LoginComponent },
@@ -30,7 +31,8 @@ const appRoutes: Routes = [
     {path: 'deadstock', component: DeadstockComponent},
     {path: 'sales-home', component: SalesBillHomeComponent},
     {path: 'grey', component: GreyPurchaseComponent},
-    {path: 'mill', component: MillComponent}
+    {path: 'mill', component: MillComponent},
+    {path: 'tracking', component: TrackingComponent}
 ];
 
 @NgModule({
@@ -44,6 +46,7 @@ const appRoutes: Routes = [
     SalesBillHomeComponent,
     GreyPurchaseComponent,
     MillComponent,
+    TrackingComponent,
   ],
   imports: [
     BrowserModule,
@@ -53,7 +56,8 @@ const appRoutes: Routes = [
       RouterModule.forRoot(appRoutes),
       HttpClientModule
   ],
-    providers: [UserService, LoginComponent, SalesBillComponent, SalesbillService, ItemService, MessageService,GreyPurchaseComponent, GreyService],
+    providers: [UserService, LoginComponent, SalesBillComponent, SalesbillService, 
+      ItemService, GreyPurchaseComponent, GreyService, TrackingComponent, MessageService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

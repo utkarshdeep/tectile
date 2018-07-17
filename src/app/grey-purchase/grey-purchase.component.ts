@@ -53,12 +53,14 @@ export class GreyPurchaseComponent implements OnInit {
 
     createBill(form: NgForm) {
         this.greyService.createBill(form.value);
+        console.log(form);
+        console.log(form.value)
         this.items.forEach(item => this.itemService.addItem(item ));
     }
 
   ngOnInit() {
 
-      this.items = this.itemService.getItem("Unfinished")
+//this.items = this.itemService.getItem("Unfinished")
   }
 
 }
