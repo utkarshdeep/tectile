@@ -1,0 +1,184 @@
+<img src="assets/css/bootstrap/imgs/7.JPG"  id="myinventbg" width="100%" maxlength="1000px"/>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+  <div class="container">
+    <button class="navbar-brand font-weight-bold bg-dark" routerLink="/home">Tectile</button>
+    <!--a class="navbar-brand font-weight-bold" href="/home">Tectile</a-->
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarResponsive">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item active">
+          <a class="nav-link" routerLink="/home">Home
+            <span class="sr-only">(current)</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Services</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Contact</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link"  href="#">Logout</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- <div class="modal fade bd-example-modal-lg" id = "addOrder" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Track Progress</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+          <ol class="progtrckr" data-progtrckr-steps="5">
+            <li class="progtrckr-done">Order Processing</li>
+            <li class="progtrckr-done">Pre-Production</li>
+            <li class="progtrckr-done">In Production</li>
+            <li class="progtrckr-done">Shipped</li>
+            <li class="progtrckr-todo">Delivered</li>
+          </ol>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div> -->
+
+<div class="modal fade bd-example-modal-lg" width='80rem' tabindex="-1" id = "addOrder" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Track Progress</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+          <ol class="progtrckr" data-progtrckr-steps="5">
+            <li class="progtrckr-done"> Order Created </li>
+            <li class="progtrckr-done">Order Approved</li>
+            <li class="progtrckr-done">In Production</li>
+            <li class="progtrckr-done">Shipped</li>
+            <li class="progtrckr-todo">Delivered</li>
+          </ol>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="list">
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th scope="col">Order No.</th>
+        <th scope="col">Type</th>
+        <th scope="col">Status</th>
+        <th scope="col">Track</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr >
+        <th scope="row">1</th>
+        <td>Finished</td>
+        <td>IN PROGRESS</td>
+        <td>
+          <div class="btn-group">
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addOrder">
+                Track
+            </button>
+            <div class="dropdown-menu">
+                <a class="dropdown-item" href="#">Closed</a>
+            </div>
+        </div>
+        </td>
+      </tr>
+      <tr >
+        <th scope="row">1</th>
+        <td>Finished</td>
+        <td>IN PROGRESS</td>
+        <td>
+          <div class="btn-group">
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addOrder">
+                Track
+            </button>
+            <div class="dropdown-menu">
+                <a class="dropdown-item" href="#">Closed</a>
+            </div>
+        </div>
+        </td>
+      </tr>
+      <tr >
+        <th scope="row">1</th>
+        <td>Finished</td>
+        <td>IN PROGRESS</td>
+        <td>
+          <div class="btn-group">
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addOrder">
+                Track
+            </button>
+            <div class="dropdown-menu">
+                <a class="dropdown-item" href="#">Closed</a>
+            </div>
+        </div>
+        </td>
+      </tr>
+      <tr >
+        <th scope="row">1</th>
+        <td>Finished</td>
+        <td>IN PROGRESS</td>
+        <td>
+          <div class="btn-group">
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addOrder">
+                Track
+            </button>
+            <div class="dropdown-menu">
+                <a class="dropdown-item" href="#">Closed</a>
+            </div>
+        </div>
+        </td>
+      </tr>
+      <tr >
+        <th scope="row">1</th>
+        <td>Finished</td>
+        <td>IN PROGRESS</td>
+        <td>
+          <div class="btn-group">
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addOrder">
+                Track
+            </button>
+            <div class="dropdown-menu">
+                <a class="dropdown-item" href="#">Closed</a>
+            </div>
+        </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+
+<!-- <div class="box">
+  <ol class="progtrckr" data-progtrckr-steps="5">
+    <li class="progtrckr-done">Order Processing</li>
+    <li class="progtrckr-done">Pre-Production</li>
+    <li class="progtrckr-done">In Production</li>
+    <li class="progtrckr-done">Shipped</li>
+    <li class="progtrckr-todo">Delivered</li>
+  </ol>
+</div> -->
