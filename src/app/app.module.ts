@@ -20,6 +20,7 @@ import { SalesBillHomeComponent } from './sales-bill-home/sales-bill-home.compon
 import { GreyPurchaseComponent } from './grey-purchase/grey-purchase.component';
 import { MillComponent } from './mill/mill.component';
 import {GreyService} from "./shared/grey.service";
+import { MessageService } from './shared/message.service';
 
 const appRoutes: Routes = [
     {path: '', component: LoginComponent },
@@ -52,7 +53,7 @@ const appRoutes: Routes = [
       RouterModule.forRoot(appRoutes),
       HttpClientModule
   ],
-    providers: [UserService, LoginComponent, SalesBillComponent, SalesbillService, ItemService, GreyPurchaseComponent, GreyService],
+    providers: [UserService, LoginComponent, SalesBillComponent, SalesbillService, ItemService, MessageService,GreyPurchaseComponent, GreyService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
