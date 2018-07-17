@@ -20,8 +20,11 @@ import { SalesBillHomeComponent } from './sales-bill-home/sales-bill-home.compon
 import { GreyPurchaseComponent } from './grey-purchase/grey-purchase.component';
 import { MillComponent } from './mill/mill.component';
 import {GreyService} from "./shared/grey.service";
-import { MessageService } from './shared/message.service';
 import { TrackingComponent } from './tracking/tracking.component';
+import { AngularFireModule } from 'angularfire2';
+import { AngularFireDatabaseModule } from 'angularfire2/database';
+import { AngularFireAuthModule } from 'angularfire2/auth';
+import { FIREBASE_CONFIG } from './app.firebase.config';
 
 const appRoutes: Routes = [
     {path: '', component: LoginComponent },
@@ -54,10 +57,13 @@ const appRoutes: Routes = [
       ToastrModule.forRoot(),
       BrowserAnimationsModule,
       RouterModule.forRoot(appRoutes),
-      HttpClientModule
+      HttpClientModule,
+      AngularFireModule.initializeApp(FIREBASE_CONFIG),
+    AngularFireDatabaseModule,
+    AngularFireAuthModule
   ],
     providers: [UserService, LoginComponent, SalesBillComponent, SalesbillService, 
-      ItemService, GreyPurchaseComponent, GreyService, TrackingComponent, MessageService],
+      ItemService, GreyPurchaseComponent, GreyService, TrackingComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
